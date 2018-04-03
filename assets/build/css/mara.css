@@ -1,0 +1,126 @@
+body{
+    /*padding-top: 1% !important;*/
+    background:#d5ca85;
+}
+
+
+#logo{
+	height: 100px;
+margin-top: 6%;
+margin-left: 25%;
+
+}
+
+.logo{
+	margin-bottom: 30%;
+}
+
+#title_nav, #sidebar-menu{
+	background-color: #cfc272;
+	
+}
+
+#sidebar-menu li a{
+	/*background-color: #cfc272;*/
+	color:#000;
+}
+#sidebar-menu li a:hover{
+	/*background-color: #cfc272;*/
+	color:#af0c15;
+}
+.left_col {
+    background: #cfc272;
+}
+
+.nav.side-menu>li.active>a {
+   background: #af0c15;
+   color:#fff !important;
+}
+.nav.side-menu>li.active>a span.fa {
+   background: #af0c15;
+   color:#fff !important;
+}
+ 
+.nav.side-menu>li.active>a:hover {
+   background: #af0c15;
+   color:#fff !important;
+}
+
+
+.main_menu span.fa {
+    float: right;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 10px;
+    min-width: inherit;
+    color: #000;
+}
+
+.nav.side-menu>li>a:hover {
+    color: #af0c15 !important;
+}
+.nav.side-menu>li>a:hover span.fa {
+    color: #af0c15 !important;
+}
+
+.nav.side-menu>li.active, .nav.side-menu>li.current-page {
+    border-right: 5px solid #000;
+}
+
+.nav-md ul.nav.child_menu li:before {
+    background: #af0c15;
+    bottom: auto;
+    content: "";
+    height: 8px;
+    left: 23px;
+    margin-top: 15px;
+    position: absolute;
+    right: auto;
+    width: 8px;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+nav-md ul.nav.child_menu li:after {
+    border-left: 1px solid #af0c15;
+    bottom: 0;
+    content: "";
+    left: 27px;
+    position: absolute;
+    top: 0;
+}
+
+ .fa-bars{
+    color: #af0c15;
+}
+hr{
+	/*color: #af0c15;*/
+	border: solid 2px #af0c15;
+}
+
+.sidebar-footer {
+    bottom: 0px;
+    clear: both;
+    display: block;
+    padding: 5px 0 0 0;
+    position: fixed;
+    width: 230px;
+    background: #af0c15;
+	z-index:999;
+}
+
+.sidebar-footer a {
+    padding: 7px 0 3px;
+    text-align: center;
+    width: 25%;
+    font-size: 17px;
+    display: block;
+    float: left;
+    background: #af0c15;
+    cursor: pointer;
+}
+
+.sidebar-footer a:hover {
+    background: #af0c15;
+}
+
