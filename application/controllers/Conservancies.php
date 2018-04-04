@@ -26,6 +26,13 @@ public function column(){
 	 
 
 }
+public function treemap(){
+	//  $this->load->view('includes/header_view');
+	// $this->load->view('includes/nav_view');
+	$this->load->view('conservancies/tree_map');
+	 
+
+}
 public function dashboard(){
 	 $this->load->view('includes/header_view');
 	$this->load->view('includes/nav_view');

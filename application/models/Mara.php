@@ -133,6 +133,26 @@ class Mara extends CI_Model {
      $result = $this->db->query($get);
     return $result->result();
 	}
+	public function get_camps(){
+		$get="      SELECT  Firm_ID,Firm_Name,Year,Acres,Total_Camps,Supporting_Camps,Bed,Land_Owners,
+		Women_Land_Owners,Male_Loc,Female_Loc,Rangers,Trained,Roads,Reg_Leases,Lease_Acre,Leasehold_Fees,Direct_Employment,Population_Around,Cattles,Waterpans,Springs,Rivers,Vegetation,Mammals,Birds,Training_Sessions,Legal_Gov,Bursary,Budget
+
+            FROM 
+    firm  where Total_Camps != 0 
+    order by Total_Camps ASC";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
+	public function get_employment(){
+		$get="      SELECT  Firm_ID,Firm_Name,Year,Acres,Total_Camps,Supporting_Camps,Bed,Land_Owners,
+		Women_Land_Owners,Male_Loc,Female_Loc,Rangers,Trained,Roads,Reg_Leases,Lease_Acre,Leasehold_Fees,Direct_Employment,Population_Around,Cattles,Waterpans,Springs,Rivers,Vegetation,Mammals,Birds,Training_Sessions,Legal_Gov,Bursary,Budget
+
+            FROM 
+    firm  where Direct_Employment != 0 and Population_Around !=0
+    order by Direct_Employment ASC";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
 	public function budget(){
 		$get="      SELECT  Firm_ID,Firm_Name,Year,Acres,Total_Camps,Supporting_Camps,Bed,Land_Owners,
 		Women_Land_Owners,Male_Loc,Female_Loc,Rangers,Trained,Roads,Reg_Leases,Lease_Acre,Leasehold_Fees,Direct_Employment,Population_Around,Cattles,Waterpans,Springs,Rivers,Vegetation,Mammals,Birds,Training_Sessions,Legal_Gov,Bursary,Budget
@@ -170,6 +190,14 @@ public function Leasehold_Fees(){
             FROM  firm
              where Leasehold_Fees !=0
      order by Leasehold_Fees ASC ";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
+	public function Leasehold_Fee(){
+		$get="      SELECT  Firm_Name as name ,Acres as y, Year as z
+            FROM  firm
+            
+     order by Acres ASC ";
      $result = $this->db->query($get);
     return $result->result();
 	}

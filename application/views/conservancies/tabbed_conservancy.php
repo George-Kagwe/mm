@@ -5,6 +5,41 @@
         <title>Line Chart</title>
         
         <script type="text/javascript">
+         $(document).ready(function() {
+          $.getJSON("<?php echo site_url('welcome/Leasehold_Fee');?>", function(json) {  
+
+                        Highcharts.chart('container', {
+
+                            chart: {
+                                type: 'variablepie'
+                            },
+                            title: {
+                                text: 'Conservancies in the Mara and the year Established'
+                            },
+                            tooltip: {
+                                headerFormat: '',
+                                pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
+                                    'Size (Acres): <b>{point.y}</b><br/>' +
+                                    'Established in <b>{point.z}</b><br/>'
+                            },
+                            series: [{
+                                minPointSize: 10,
+                                innerSize: '20%',
+                                zMin: 0,
+                                name: 'countries',
+                                data:json
+
+                            }]
+                      });
+
+
+
+
+ 
+
+                });
+
+         });
         $(document).ready(function() {
            $.getJSON("<?php echo site_url('welcome/clean');?>", function(json) {  
 
@@ -426,11 +461,11 @@
                 series: []
             }
    
-            $.getJSON("<?php echo site_url('welcome/conservancies');?>", function(json) {
+            $.getJSON("<?php echo site_url('welcome/get_employment');?>", function(json) {
                 
                 options.xAxis.categories = json[0]['data'];
                 options.series.push(json[16]);
-                options.series.push(json[17]);
+                // options.series.push(json[17]);
               
              
                 
@@ -597,11 +632,11 @@
         });
 
         $(document).ready(function() {
-                $.getJSON('http://localhost/mara/welcome/conservancies', function (population) {
+                $.getJSON('http://localhost/mara/welcome/get_camps', function (population) {
                   Highcharts.chart('camps', {
 
                 title: {
-                    text: 'TOTAL CAMPS, SUPPORTING CAMPS AND BEDS',
+                    text: 'TOTAL CAMPS AND SUPPORTING CAMPS ',
                     style: {
                                 fontSize: '15px',
                                 fontFamily: 'Verdana, sans-serif',
@@ -649,31 +684,32 @@
                         lineColor: Highcharts.getOptions().colors[3],
                         fillColor: 'white'
                     }
-                }, 
-
-                {
-                    type: 'pie',
-                    name: 'Total consumption',
-                    data: [{
-                        name: 'Jane',
-                        y: 13,
-                        color: Highcharts.getOptions().colors[0] // Jane's color
-                    }, {
-                        name: 'John',
-                        y: 23,
-                        color: Highcharts.getOptions().colors[1] // John's color
-                    }, {
-                        name: 'Joe',
-                        y: 19,
-                        color: Highcharts.getOptions().colors[2] // Joe's color
-                    }],
-                    center: [100, 80],
-                    size: 100,
-                    showInLegend: false,
-                    dataLabels: {
-                        enabled: false
-                    }
                 }]
+                // }, 
+
+                // {
+                //     type: 'pie',
+                //     name: 'Total consumption',
+                //     data: [{
+                //         name: 'Jane',
+                //         y: 13,
+                //         color: Highcharts.getOptions().colors[0] // Jane's color
+                //     }, {
+                //         name: 'John',
+                //         y: 23,
+                //         color: Highcharts.getOptions().colors[1] // John's color
+                //     }, {
+                //         name: 'Joe',
+                //         y: 19,
+                //         color: Highcharts.getOptions().colors[2] // Joe's color
+                //     }],
+                //     center: [100, 80],
+                //     size: 100,
+                //     showInLegend: false,
+                //     dataLabels: {
+                //         enabled: false
+                //     }
+                // }]
 
             });
                  });
@@ -681,7 +717,7 @@
          });
         
         $(document).ready(function() {
-     $.getJSON("<?php echo site_url('welcome/reg_leases');?>", function(json) {  
+               $.getJSON("<?php echo site_url('welcome/reg_leases');?>", function(json) {  
 
               
 
@@ -706,7 +742,7 @@
                                 '#26C0C0'
                             ],
                     title: {
-                        text: 'MASAI MARA CONSERVANCIES BY SIZE',
+                        text: 'MASAI MARA REGISTERED LEASES',
                         style: {
                                 fontSize: '13px',
                                 fontFamily: 'Verdana, sans-serif',
@@ -752,7 +788,7 @@
         });  
 
       $(document).ready(function() {
-     $.getJSON("<?php echo site_url('welcome/Leasehold_Fees');?>", function(json) {  
+            $.getJSON("<?php echo site_url('welcome/Leasehold_Fees');?>", function(json) {  
 
               
 
@@ -822,7 +858,7 @@
                             });
         });  
           $(document).ready(function() {
-     $.getJSON("<?php echo site_url('welcome/Lease_Acre');?>", function(json) {  
+             $.getJSON("<?php echo site_url('welcome/Lease_Acre');?>", function(json) {  
 
               
 
@@ -899,6 +935,15 @@
           
         <script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="http://code.highcharts.com/modules/exporting.js"></script>
+          <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+       <style type="text/css">
+            #container {
+    min-width: 300px;
+   /* max-width: 800px;*/
+    height: 500px;
+    margin: 1em auto;
+}
+        </style>
     </head>
     <body>
 
@@ -927,12 +972,16 @@
 			        <div class="container">
 
 			             <div class="row">
+                          <div class="col-lg-12">
+                                  <div id="container" name="container"></div>
+
+                              </div>
 			                  <div class="col-lg-7">
-			                      <div id="conservancy" name="conservancy"></div>
+			                      <div id="conservancyf" name="conservancy"></div>
 
 			                  </div>
                               <div class="col-lg-5">
-                                  <div id="conservancy_pie" name="conservancy_pie"></div>
+                                  <div id="conservancy_pief" name="conservancy_pie"></div>
 
                               </div>
 

@@ -20,8 +20,8 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li ><a href="#">HOME </a></li>
-        
-        <li class="dropdown">
+         <li><a href="<?=site_url('conservancies/')?>">Conservancies</a></li>
+        <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conservancies <span class="fa fa-chevron-down"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?=site_url('conservancies/sizes')?>">Conservancy Sizes</a></li>
@@ -29,7 +29,7 @@
             <li><a href="#"></a></li>
             <li><a href="#">LAND coverage</a></li>
           </ul>
-        </li>
+        </li> -->
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">PROJECTS <span class="fa fa-chevron-down"></span></a>
           <ul class="dropdown-menu">

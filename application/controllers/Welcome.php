@@ -452,6 +452,320 @@ class Welcome extends CI_Controller {
 			 
 			print json_encode($result, JSON_NUMERIC_CHECK);
 	}
+	 public function get_camps()
+	{       
+
+		   
+             
+
+            
+			$data = $this->mara->get_camps();
+			
+			
+			$category = array();
+			$category['name'] = 'Category';
+				 
+			// $series1 = array();
+			// $series1['name'] = 'Conservancy';
+			 
+			$series1 = array();
+			$series1['name'] = 'Year Established';
+			
+			$series2 = array();
+			$series2['name'] = 'Acres';
+
+			$series3 = array();
+			$series3['name'] = 'Total Camps';
+
+			$series4 = array();
+			$series4['name'] = 'Supporting Camps';
+
+			$series5 = array();
+			$series5['name'] = 'Bed';
+
+			$series6 = array();
+			$series6['name'] = 'Land Owners';
+
+			$series7 = array();
+			$series7['name'] = 'Women Land Owners';
+			 
+			$series8 = array();
+			$series8['name'] = 'Male Loc';
+
+			$series9 = array();
+			$series9['name'] = 'Female Loc';
+
+			$series10 = array();
+			$series10['name'] = 'Rangers';
+
+			$series11 = array();
+			$series11['name'] = 'Trained';
+			 
+			$series12 = array();
+			$series12['name'] = 'Roads';
+
+			$series13= array();
+			$series13['name'] = 'Registered Leases';
+
+			$series14= array();
+			$series14['name'] = 'Leased Acres';
+			
+
+			$series15= array();
+			$series15['name'] = 'Leasehold Fees';
+
+
+			$series16= array();
+			$series16['name'] = 'Direct Employment';
+
+
+			$series17= array();
+			$series17['name'] = 'Population Around';
+
+
+			$series18= array();
+			$series18['name'] = 'Cattles';
+
+
+			$series19= array();
+			$series19['name'] = 'water pans';
+
+			$series20= array();
+			$series20['name'] = 'Springs ';
+
+
+			$series21= array();
+			$series21['name'] = 'Rivers';
+
+			$series22= array();
+			$series22['name'] = 'Bursaries';
+
+			$series23= array();
+			$series23['name'] = 'Budget';
+
+
+			 
+			 
+			 
+			 
+			 
+			 
+			foreach ($data as $row)
+			{
+			$category['data'][] = $row->Firm_Name;
+
+			$series1['data'][] = $row->Year;
+			$series2['data'][] = $row->Acres;
+			$series3['data'][] = $row->Total_Camps;
+			$series4['data'][] = $row->Supporting_Camps;
+			$series5['data'][] = $row->Bed;
+			$series6['data'][] = $row->Land_Owners;
+			$series7['data'][] = $row->Women_Land_Owners;
+			$series8['data'][] = $row->Male_Loc;
+			$series9['data'][] = $row->Female_Loc;
+			$series10['data'][] = $row->Rangers;
+			$series11['data'][] = $row->Trained;
+			$series12['data'][] = $row->Roads;
+			$series13['data'][] = $row->Reg_Leases;
+			$series14['data'][] = $row->Lease_Acre;
+			$series15['data'][] = $row->Leasehold_Fees;
+			$series16['data'][] = $row->Direct_Employment;
+			$series17['data'][] = $row->Population_Around;
+			$series18['data'][] = $row->Cattles;
+			$series19['data'][] = $row->Waterpans;
+			$series20['data'][] = $row->Springs;
+			$series21['data'][] = $row->Rivers;
+			$series22['data'][] = $row->Bursary;
+			$series23['data'][] = $row->Budget;
+			
+			
+			}
+			 
+			$result = array();
+			array_push($result,$category);
+			array_push($result,$series1);
+			array_push($result,$series2);
+			array_push($result,$series3);
+			array_push($result,$series4);
+			array_push($result,$series5);
+			array_push($result,$series6);
+			array_push($result,$series7);
+			array_push($result,$series8);	
+			array_push($result,$series9);
+			array_push($result,$series10);	
+			array_push($result,$series11);
+			array_push($result,$series12);	
+			array_push($result,$series13);
+			array_push($result,$series14);	
+			array_push($result,$series15);
+			array_push($result,$series16);	
+			array_push($result,$series17);
+			array_push($result,$series18);
+			array_push($result,$series19);
+			array_push($result,$series20);
+			array_push($result,$series21);
+			array_push($result,$series22);
+			array_push($result,$series23);
+			 
+			print json_encode($result, JSON_NUMERIC_CHECK);
+	}
+	 public function get_employment()
+	{       
+
+		   
+             
+
+            
+			$data = $this->mara->get_employment();
+			
+			
+			$category = array();
+			$category['name'] = 'Category';
+				 
+			// $series1 = array();
+			// $series1['name'] = 'Conservancy';
+			 
+			$series1 = array();
+			$series1['name'] = 'Year Established';
+			
+			$series2 = array();
+			$series2['name'] = 'Acres';
+
+			$series3 = array();
+			$series3['name'] = 'Total Camps';
+
+			$series4 = array();
+			$series4['name'] = 'Supporting Camps';
+
+			$series5 = array();
+			$series5['name'] = 'Bed';
+
+			$series6 = array();
+			$series6['name'] = 'Land Owners';
+
+			$series7 = array();
+			$series7['name'] = 'Women Land Owners';
+			 
+			$series8 = array();
+			$series8['name'] = 'Male Loc';
+
+			$series9 = array();
+			$series9['name'] = 'Female Loc';
+
+			$series10 = array();
+			$series10['name'] = 'Rangers';
+
+			$series11 = array();
+			$series11['name'] = 'Trained';
+			 
+			$series12 = array();
+			$series12['name'] = 'Roads';
+
+			$series13= array();
+			$series13['name'] = 'Registered Leases';
+
+			$series14= array();
+			$series14['name'] = 'Leased Acres';
+			
+
+			$series15= array();
+			$series15['name'] = 'Leasehold Fees';
+
+
+			$series16= array();
+			$series16['name'] = 'Direct Employment';
+
+
+			$series17= array();
+			$series17['name'] = 'Population Around';
+
+
+			$series18= array();
+			$series18['name'] = 'Cattles';
+
+
+			$series19= array();
+			$series19['name'] = 'water pans';
+
+			$series20= array();
+			$series20['name'] = 'Springs ';
+
+
+			$series21= array();
+			$series21['name'] = 'Rivers';
+
+			$series22= array();
+			$series22['name'] = 'Bursaries';
+
+			$series23= array();
+			$series23['name'] = 'Budget';
+
+
+			 
+			 
+			 
+			 
+			 
+			 
+			foreach ($data as $row)
+			{
+			$category['data'][] = $row->Firm_Name;
+
+			$series1['data'][] = $row->Year;
+			$series2['data'][] = $row->Acres;
+			$series3['data'][] = $row->Total_Camps;
+			$series4['data'][] = $row->Supporting_Camps;
+			$series5['data'][] = $row->Bed;
+			$series6['data'][] = $row->Land_Owners;
+			$series7['data'][] = $row->Women_Land_Owners;
+			$series8['data'][] = $row->Male_Loc;
+			$series9['data'][] = $row->Female_Loc;
+			$series10['data'][] = $row->Rangers;
+			$series11['data'][] = $row->Trained;
+			$series12['data'][] = $row->Roads;
+			$series13['data'][] = $row->Reg_Leases;
+			$series14['data'][] = $row->Lease_Acre;
+			$series15['data'][] = $row->Leasehold_Fees;
+			$series16['data'][] = $row->Direct_Employment;
+			$series17['data'][] = $row->Population_Around;
+			$series18['data'][] = $row->Cattles;
+			$series19['data'][] = $row->Waterpans;
+			$series20['data'][] = $row->Springs;
+			$series21['data'][] = $row->Rivers;
+			$series22['data'][] = $row->Bursary;
+			$series23['data'][] = $row->Budget;
+			
+			
+			}
+			 
+			$result = array();
+			array_push($result,$category);
+			array_push($result,$series1);
+			array_push($result,$series2);
+			array_push($result,$series3);
+			array_push($result,$series4);
+			array_push($result,$series5);
+			array_push($result,$series6);
+			array_push($result,$series7);
+			array_push($result,$series8);	
+			array_push($result,$series9);
+			array_push($result,$series10);	
+			array_push($result,$series11);
+			array_push($result,$series12);	
+			array_push($result,$series13);
+			array_push($result,$series14);	
+			array_push($result,$series15);
+			array_push($result,$series16);	
+			array_push($result,$series17);
+			array_push($result,$series18);
+			array_push($result,$series19);
+			array_push($result,$series20);
+			array_push($result,$series21);
+			array_push($result,$series22);
+			array_push($result,$series23);
+			 
+			print json_encode($result, JSON_NUMERIC_CHECK);
+	}
     
      public function Budget()
 	{       
@@ -771,6 +1085,21 @@ class Welcome extends CI_Controller {
 			// );
 
 			echo json_encode($JsonArray);
+			
+			}
+			public function Leasehold_Fee(){
+			$data = $this->mara->Leasehold_Fee();
+
+			$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    $JsonArray[] = array(($row->name),floatval($row->y ),floatval($row->z) );
+			}
+           
+           
+
+			echo json_encode( $data,JSON_NUMERIC_CHECK);
 			
 			}
 
