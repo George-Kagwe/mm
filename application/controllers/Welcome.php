@@ -122,7 +122,7 @@ class Welcome extends CI_Controller {
 			$series3 = array();
 			$series3['name'] = 'BOUNCE RATE(% SINGLE VISITS)';
 			$series4 = array();
-			$series4['name'] = 'TOTAL VISITS)';
+			$series4['name'] = 'TOTAL VISITS';
 			
 			
 			 
@@ -1130,7 +1130,7 @@ class Welcome extends CI_Controller {
 
 			foreach ($data as $row){
 			
-			    $JsonArray[] = array(($row->name),floatval($row->value ) );
+			    $JsonArray[] = array(($row->name ." ".$row->value),floatval($row->value ) );
 			}
 
 			// $labeledArray = array( 
@@ -1160,6 +1160,69 @@ class Welcome extends CI_Controller {
 			echo json_encode($JsonArray);
 			
 			}
+
+			public function employment(){
+			$data = $this->mara->employment();
+           
+           // var_dump($data);die();
+			$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    $JsonArray[] = array(($row->name),floatval($row->value ) );
+			}
+
+			// $labeledArray = array( 
+			    
+			//     "data" => $JsonArray
+			// );
+
+			echo json_encode($JsonArray);
+			
+			}
+
+			public function budgets(){
+			$data = $this->mara->budget();
+           
+           // var_dump($data);die();
+			$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    $JsonArray[] = array(($row->name),floatval($row->value ) );
+			}
+
+			// $labeledArray = array( 
+			    
+			//     "data" => $JsonArray
+			// );
+
+			echo json_encode($JsonArray);
+			
+			}
+
+			public function bursaries(){
+			$data = $this->mara->bursaries();
+           
+           // var_dump($data);die();
+			$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    $JsonArray[] = array(($row->name),floatval($row->value ) );
+			}
+
+			// $labeledArray = array( 
+			    
+			//     "data" => $JsonArray
+			// );
+
+			echo json_encode($JsonArray);
+			
+			}
+
+
+
 
 
        

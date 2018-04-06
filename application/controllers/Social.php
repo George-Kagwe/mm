@@ -13,8 +13,8 @@ class Social extends CI_Controller {
 	}
 public function index(){
 	$this->load->view('includes/header_view');
-	$this->load->view('includes/nav_view');
-	$this->load->view('socialmedia/Social');
+	$this->load->view('includes/social');
+	$this->load->view('socialmedia/s');
 	$this->load->view('includes/footer_view');
 }
 

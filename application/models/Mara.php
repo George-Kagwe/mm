@@ -53,11 +53,20 @@ class Mara extends CI_Model {
 
 	function get_twitter()
 	{
-	$this->db->select('month,tweets,impressions,profile_visits,mentions, new_followers,
-		total_followers');
-	$this->db->from('twitter');
-	$query = $this->db->get();
-	return $query->result();
+	// $this->db->select('month,tweets,impressions,profile_visits,mentions, new_followers,
+	// 	total_followers');
+	// $this->db->from('twitter');
+	// $this->db->where('tweets')
+	// $query = $this->db->get();
+	// return $query->result();
+		$get="      SELECT  month,tweets,impressions,profile_visits,mentions, new_followers,
+	 	total_followers
+
+            FROM 
+    twitter  where tweets != 0 
+    ";
+     $result = $this->db->query($get);
+    return $result->result();
 	}
 	function get_website()
 	{
@@ -153,16 +162,35 @@ class Mara extends CI_Model {
      $result = $this->db->query($get);
     return $result->result();
 	}
-	public function budget(){
-		$get="      SELECT  Firm_ID,Firm_Name,Year,Acres,Total_Camps,Supporting_Camps,Bed,Land_Owners,
-		Women_Land_Owners,Male_Loc,Female_Loc,Rangers,Trained,Roads,Reg_Leases,Lease_Acre,Leasehold_Fees,Direct_Employment,Population_Around,Cattles,Waterpans,Springs,Rivers,Vegetation,Mammals,Birds,Training_Sessions,Legal_Gov,Bursary,Budget
+
+  public function employment(){
+		$get="      SELECT  Firm_Name as name ,Direct_Employment as value
 
             FROM 
-    firm  where Budget!= 0 
-    order by Acres ASC";
+    firm  where Direct_Employment != 0 
+    order by Direct_Employment ASC";
      $result = $this->db->query($get);
     return $result->result();
 	}
+	public function budget(){
+		$get="      SELECT  Firm_Name as name ,Budget as value
+
+            FROM 
+    firm  where Budget!= 0 
+    order by Budget ASC";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
+	public function bursaries(){
+		$get="      SELECT  Firm_Name as name ,Bursary as value
+
+            FROM 
+    firm  where Bursary!= 0 
+    order by Bursary ASC";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
+
 
 	public function conserve(){
 		$get="      SELECT  Firm_Name as name ,acres as value,Year

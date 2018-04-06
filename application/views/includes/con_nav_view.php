@@ -20,7 +20,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <li ><a href="#">HOME </a></li>
-         <li><a href="<?=site_url('conservancies/')?>">Conservancies</a></li>
+         <li ><a style="  background-color: #d5ca85; color:#000;"  href="<?=site_url('conservancies/')?>">Conservancies</a></li>
         <!-- <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Conservancies <span class="fa fa-chevron-down"></span></a>
           <ul class="dropdown-menu">
@@ -55,7 +55,7 @@
           <li><a href="<?=site_url('population/index')?>">POPULATION</a></li>
         
         <li><a href="#">success stories</a></li>
-         <li><a href="<?=site_url('social/index')?>">social media</a></li>
+      <li><a href="<?=site_url('social/index')?>">social media</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

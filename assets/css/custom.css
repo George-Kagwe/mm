@@ -124,7 +124,7 @@ border-color:#d5ca85;
 .navbar-default .navbar-nav>.open>a:hover
 .navbar-default .navbar-nav>.open>a:active {
    color: #fff !important;
-  background-color: #d5ca85; 
+  background-color: #d5ca85 !important; 
   color: #000;
   border-color:#d5ca85; 
 }
@@ -147,4 +147,34 @@ border-color:#d5ca85;
     background-color: #d5ca85 !important;
    
    
+}
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:focus, .dropdown-menu>.active>a:hover {
+    background-color: #d5ca85 !important;
+    
+    background-repeat: repeat-x;
+}
+
+#conservancies_tab .dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #fff;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
+    font-size: 13px;
+    
+}
+
+#conservancies_tab .dropdown-menu>li>a:hover {
+   
+    color: #000 !important;
+
+    
+}
+
+#conservancies_tab ul.dropdown-menu>li.active>a{
+    background: #d5ca85 !important;
 }

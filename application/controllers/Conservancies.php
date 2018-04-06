@@ -143,7 +143,7 @@ public function tree(){
 }
 public function index(){
 	$this->load->view('includes/header_view');
-	$this->load->view('includes/nav_view');
+	$this->load->view('includes/con_nav_view');
 	$this->load->view('conservancies/tabbed_conservancy');
 	$this->load->view('includes/footer_view');
 

@@ -14,17 +14,22 @@
                                 type: 'variablepie'
                             },
                             title: {
-                                text: 'Conservancies in the Mara and the year Established'
+                                text: 'Size in (acres) and the year established',
+                                 style: {
+                                            fontSize: '15px',
+                                            fontFamily: 'Verdana, sans-serif',
+                                            fontWeight: 'bold'
+                                         }
                             },
                             tooltip: {
                                 headerFormat: '',
                                 pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
                                     'Size (Acres): <b>{point.y}</b><br/>' +
-                                    'Established in <b>{point.z}</b><br/>'
+                                    'Established in <b>{point.z:0f}</b><br/>'
                             },
                             series: [{
                                 minPointSize: 10,
-                                innerSize: '20%',
+                                innerSize: '30%',
                                 zMin: 0,
                                 name: 'countries',
                                 data:json
@@ -172,76 +177,139 @@
                     });
                 });  
         });  
-        $(document).ready(function() {
-           $.getJSON("<?php echo site_url('welcome/Women_Land_Owners');?>", function(json) {  
 
-              
+        //women land woners
+        // $(document).ready(function() {
+                    //    $.getJSON("<?php echo site_url('welcome/Women_Land_Owners');?>", function(json) {  
 
-                Highcharts.chart('Women_Land_Owners', {
+                          
 
-                    chart: {
-                        type: 'column'
-                    },
-                    plotOptions: {
-                                column: {
-                                    colorByPoint: true
+                    //         Highcharts.chart('Women_Land_Owners', {
+
+                    //             chart: {
+                    //                 type: 'column'
+                    //             },
+                    //             plotOptions: {
+                    //                         column: {
+                    //                             colorByPoint: true
+                    //                         }
+                    //                     },
+                    //                     colors: [
+                    //                         '#C1232B','#B5C334',
+                    //                         '#FCCE10','#E87C25',
+                    //                         '#27727B','#FE8463',
+                    //                         '#9BCA63','#FAD860',
+                    //                         '#F3A43B','#60C0DD',
+                    //                         '#D7504B','#C6E579',
+                    //                         '#F4E001','#F0805A',
+                    //                         '#26C0C0'
+                    //                     ],
+                    //             title: {
+                    //                 text: 'MASAI MARA WOMEN LAND OWNERS',
+                    //                 style: {
+                    //                         fontSize: '15px',
+                    //                         fontFamily: 'Verdana, sans-serif',
+                    //                         fontWeight: 'normal'
+                    //                     }
+
+                    //             },
+                    //             credits: {
+                    //                                 enabled: false
+                    //                                },
+                    //             subtitle: {
+                    //                 text: ''
+                    //             },
+                    //             xAxis: {
+                    //                 type: 'category',
+                    //                 labels: {
+                    //                     rotation: -45,
+                    //                     style: {
+                    //                         fontSize: '13px',
+                    //                         fontFamily: 'Verdana, sans-serif'
+                    //                     }
+                    //                 }
+                    //             },
+                    //             yAxis: {
+                    //                 min: 0,
+                    //                 title: {
+                    //                     text: 'Total Women Land Owners'
+                    //                 }
+                    //             },
+                    //             legend: {
+                    //                 enabled: false
+                    //             },
+                    //             tooltip: {
+                    //                 pointFormat: ' <b>Total of {point.y:,.0f} Women Land Owners</b>'
+                    //             },
+                    //             series: [{
+                    //                 name: 'WOMEN LAND OWNERS',
+                    //                 data:json
+                                   
+                    //             }]
+                    //         });  
+                    //                     });
+        // });
+         $(document).ready(function() {
+
+              $.getJSON("<?php echo site_url('welcome/women_Land_Owners');?>", function(json) {  
+            
+
+                            Highcharts.setOptions({
+                                colors: ['#C1232B','#B5C334',
+                                                                '#FCCE10','#E87C25',
+                                                                '#27727B','#FE8463'],
+                                lang: {
+                                    thousandsSep: ','
                                 }
-                            },
-                            colors: [
-                                '#C1232B','#B5C334',
-                                '#FCCE10','#E87C25',
-                                '#27727B','#FE8463',
-                                '#9BCA63','#FAD860',
-                                '#F3A43B','#60C0DD',
-                                '#D7504B','#C6E579',
-                                '#F4E001','#F0805A',
-                                '#26C0C0'
-                            ],
-                    title: {
-                        text: 'MASAI MARA WOMEN LAND OWNERS',
-                        style: {
-                                fontSize: '15px',
-                                fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
-                            }
-
-                    },
-                    credits: {
-                                        enabled: false
-                                       },
-                    subtitle: {
-                        text: ''
-                    },
-                    xAxis: {
-                        type: 'category',
-                        labels: {
-                            rotation: -45,
-                            style: {
-                                fontSize: '13px',
-                                fontFamily: 'Verdana, sans-serif'
-                            }
-                        }
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Total Women Land Owners'
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    tooltip: {
-                        pointFormat: ' <b>Total of {point.y:,.0f} Women Land Owners</b>'
-                    },
-                    series: [{
-                        name: 'WOMEN LAND OWNERS',
-                        data:json
-                       
-                    }]
-                });  
                             });
-        });  
+
+                           Highcharts.chart('Women_Land_Owners', {
+                                       credits: {
+                                                  enabled: false
+                                        },
+                                        plotOptions: {
+                                                    series: {
+                                                        colorByPoint: true,
+                                                        borderColor: '#fff',
+                                                        
+                                              
+                                                        dataLabels: {
+                                                            enabled: true,
+                                                            style: {
+                                                                textOutline: 'none',
+                                                                fontFamily: 'Roboto',
+                                                                fontWeight: '300',
+                                                                fontSize: '1rem'
+                                                            }
+                                                        }
+                                                    }
+                                        },
+                                        tooltip: {
+                                              valueSuffix: ' Women land owners'
+                                        },
+                                        // colorAxis: {
+                                        //     minColor: '#FFFFFF',
+                                        //     maxColor: Highcharts.getOptions().colors[0,1,2,3,4,5]
+                                        // },
+                                        series: [{
+                                            type: 'treemap',
+                                            layoutAlgorithm: 'squarified',
+                                            data:json
+                                        }],
+                                        title: {
+                                            text: 'Women land owners',
+                                            style: {
+                                                        fontSize: '15px',
+                                                        fontFamily: 'Verdana, sans-serif',
+                                                        fontWeight: 'bold'
+                                                    }
+
+                                        }
+                             });
+              });
+
+        });
+        //total land owners  
         $(document).ready(function() {
            $.getJSON("<?php echo site_url('welcome/land_owners');?>", function(json) {  
 
@@ -268,11 +336,11 @@
                                 '#26C0C0'
                             ],
                     title: {
-                        text: 'MASAI MARA LAND OWNERS PER CONSERVANCY',
+                        text: 'Land owners per conservancies',
                         style: {
                                 fontSize: '15px',
                                 fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
+                                fontWeight: 'bold'
                             }
 
                     },
@@ -295,7 +363,7 @@
                     yAxis: {
                         min: 0,
                         title: {
-                            text: 'Total Land Owners'
+                            text: 'Total land owners'
                         }
                     },
                     legend: {
@@ -313,6 +381,7 @@
                             });
         });  
 
+        //land Leases
         $(document).ready(function() {
           
             var options = {
@@ -394,164 +463,393 @@
         });
 
 
-        $(document).ready(function() {
+        //Employment
+        // $(document).ready(function() {
           
-            var options = {
-                chart: {
-                    renderTo: 'EMPLOYMENT',
-                    type: 'column',
-                    inverted:false,
-                    marginRight: 130,
-                    marginBottom: 150
-                },
-                title: {
-                    text: 'DIRECT EMPLOYMENT VS POPULATION AROUND CONSERVANCY',
-                    x: -20 //center
-                }, 
-                credits: {
-                      enabled: false
-                },
-                subtitle: {
-                    text: '',
-                    x: -20
-                },
-                xAxis: {
-                    categories: []
-                },
-                yAxis: {
-                    title: {
-                        text: 'NUMBER OF PEPOPLE'
-                    },
-                    plotLines: [{
-                        value: 0,
-                        width: 1,
-                        color: '#808080',
-                    }]
-                },
-                tooltip: {
-                    formatter: function() {
-                            return '<b>'+ this.series.name +'</b><br/>'+
-                            this.x +': '+ this.y;
-                    }
-                },
-                legend: {
-                    padding:3,
-                    itemMarginLeft: 5,
-                     align: 'center',
-                    verticalAlign: 'middle',
-                    layout: 'horizontal',
-                    x: -100,
-                    y: 160,
-                    borderWidth: 0,
-                    itemStyle: {
-                    lineHeight: '54px'
-                }
-                },
-                 plotOptions: {
-                      series: {
-                          borderWidth: 0,
-                          dataLabels: {
-                              enabled: false,
-                              format: '{point.x[-4]:.1f}%'
-                          }
+        //     var options = {
+        //         chart: {
+        //             renderTo: 'EMPLOYMENT',
+        //             type: 'column',
+        //             inverted:false,
+        //             marginRight: 130,
+        //             marginBottom: 150
+        //         },
+        //         title: {
+        //             text: 'DIRECT EMPLOYMENT VS POPULATION AROUND CONSERVANCY',
+        //             x: -20 //center
+        //         }, 
+        //         credits: {
+        //               enabled: false
+        //         },
+        //           plotOptions: {
+        //                         column: {
+        //                             colorByPoint: true
+        //                         }
+        //                     },
+        //                     colors: [
+        //                         '#C1232B','#B5C334',
+        //                         '#FCCE10','#E87C25',
+        //                         '#27727B','#FE8463',
+        //                         '#9BCA63','#FAD860',
+        //                         '#F3A43B','#60C0DD',
+        //                         '#D7504B','#C6E579',
+        //                         '#F4E001','#F0805A',
+        //                         '#26C0C0'
+        //                     ],
+        //         subtitle: {
+        //             text: '',
+        //             x: -20
+        //         },
+        //         xAxis: {
+        //             categories: []
+        //         },
+        //         yAxis: {
+        //             title: {
+        //                 text: 'NUMBER OF PEPOPLE'
+        //             },
+        //             plotLines: [{
+        //                 value: 0,
+        //                 width: 1,
+        //                 color: '#808080',
+        //             }]
+        //         },
+        //         tooltip: {
+        //             formatter: function() {
+        //                     return '<b>'+ this.series.name +'</b><br/>'+
+        //                     this.x +': '+ this.y;
+        //             }
+        //         },
+        //         legend: {
+        //             padding:3,
+        //             itemMarginLeft: 5,
+        //              align: 'center',
+        //             verticalAlign: 'middle',
+        //             layout: 'horizontal',
+        //             x: -100,
+        //             y: 160,
+        //             borderWidth: 0,
+        //             itemStyle: {
+        //             lineHeight: '54px'
+        //         }
+        //         },
+        //          plotOptions: {
+        //               series: {
+        //                   borderWidth: 0,
+        //                   dataLabels: {
+        //                       enabled: false,
+        //                       format: '{point.x[-4]:.1f}%'
+        //                   }
 
-                      }
-                  },
+        //               }
+        //           },
 
-                series: []
-            }
+        //         series: []
+        //     }
    
-            $.getJSON("<?php echo site_url('welcome/get_employment');?>", function(json) {
+        //     $.getJSON("<?php echo site_url('welcome/get_employment');?>", function(json) {
                 
-                options.xAxis.categories = json[0]['data'];
-                options.series.push(json[16]);
-                // options.series.push(json[17]);
+        //         options.xAxis.categories = json[0]['data'];
+        //         options.series.push(json[16]);
+        //         // options.series.push(json[17]);
               
              
                 
-                var chart = new Highcharts.Chart(options);
-            });
+        //         var chart = new Highcharts.Chart(options);
+        //     });
 
-        });
-
+        // });
         $(document).ready(function() {
-          
-            var options = {
-                chart: {
-                    renderTo: 'BURSARIES',
-                    type: 'column',
-                    inverted:false,
-                    marginRight: 130,
-                    marginBottom: 150
-                },
-                title: {
-                    text: 'BURSARIES ISSUED VS BUDGET',
-                    x: -20 //center
-                }, 
-                credits: {
-                      enabled: false
-                },
-                subtitle: {
-                    text: '',
-                    x: -20
-                },
-                xAxis: {
-                    categories: []
-                },
-                yAxis: {
-                    title: {
-                        text: 'TOTAL AMOUNT'
+               $.getJSON("<?php echo site_url('welcome/employment');?>", function(json) {  
+
+              
+
+                Highcharts.chart('EMPLOYMENT', {
+
+                    chart: {
+                        type: 'column'
                     },
-                    plotLines: [{
-                        value: 0,
-                        width: 1,
-                        color: '#808080',
+                    plotOptions: {
+                                column: {
+                                    colorByPoint: true
+                                }
+                            },
+                            colors: [
+                                '#C1232B','#B5C334',
+                                '#FCCE10','#E87C25',
+                                '#27727B','#FE8463',
+                                '#9BCA63','#FAD860',
+                                '#F3A43B','#60C0DD',
+                                '#D7504B','#C6E579',
+                                '#F4E001','#F0805A',
+                                '#26C0C0'
+                            ],
+                    title: {
+                        text: 'Direct Employment',
+                        style: {
+                                fontSize: '15px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+
+                    },
+                    credits: {
+                                        enabled: false
+                                       },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Employment in numbers'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: ' <b>{point.y:,.0f} direct employees</b>'
+                    },
+                    series: [{
+                        name: 'Employment',
+                        data:json
+                       
                     }]
-                },
-                tooltip: {
-                    pointFormat: 'Amount: <b>{point.y:,.0f} shillings</b>'
-                },
-                legend: {
-                    padding:3,
-                    itemMarginLeft: 5,
-                     align: 'center',
-                    verticalAlign: 'middle',
-                    layout: 'horizontal',
-                    x: -100,
-                    y: 160,
-                    borderWidth: 0,
-                    itemStyle: {
-                    lineHeight: '54px'
-                }
-                },
-                 plotOptions: {
-                      series: {
-                          borderWidth: 0,
-                          dataLabels: {
-                              enabled: false,
-                              format: '{point.x[-4]:.1f}%'
-                          }
+                });  
+                            });
+        }); 
+         
+         //budgets
+        // $(document).ready(function() {
+          
+        //     var options = {
+        //         chart: {
+        //             renderTo: 'BURSARIES',
+        //             type: 'column',
+        //             inverted:false,
+        //             marginRight: 130,
+        //             marginBottom: 150
+        //         },
+        //         title: {
+        //             text: 'BURSARIES ISSUED VS BUDGET',
+        //             x: -20 //center
+        //         }, 
+        //         credits: {
+        //               enabled: false
+        //         },
+        //         subtitle: {
+        //             text: '',
+        //             x: -20
+        //         },
+        //         xAxis: {
+        //             categories: []
+        //         },
+        //         yAxis: {
+        //             title: {
+        //                 text: 'TOTAL AMOUNT'
+        //             },
+        //             plotLines: [{
+        //                 value: 0,
+        //                 width: 1,
+        //                 color: '#808080',
+        //             }]
+        //         },
+        //         tooltip: {
+        //             pointFormat: 'Amount: <b>{point.y:,.0f} shillings</b>'
+        //         },
+        //         legend: {
+        //             padding:3,
+        //             itemMarginLeft: 5,
+        //              align: 'center',
+        //             verticalAlign: 'middle',
+        //             layout: 'horizontal',
+        //             x: -100,
+        //             y: 160,
+        //             borderWidth: 0,
+        //             itemStyle: {
+        //             lineHeight: '54px'
+        //         }
+        //         },
+        //          plotOptions: {
+        //               series: {
+        //                   borderWidth: 0,
+        //                   dataLabels: {
+        //                       enabled: false,
+        //                       format: '{point.x[-4]:.1f}%'
+        //                   }
 
-                      }
-                  },
+        //               }
+        //           },
 
-                series: []
-            }
+        //         series: []
+        //     }
    
-            $.getJSON("<?php echo site_url('welcome/budget');?>", function(json) {
+        //     $.getJSON("<?php echo site_url('welcome/budget');?>", function(json) {
                 
-                options.xAxis.categories = json[0]['data'];
-                options.series.push(json[22]);
-                options.series.push(json[23]);
+        //         options.xAxis.categories = json[0]['data'];
+        //         options.series.push(json[22]);
+        //         options.series.push(json[23]);
               
              
                 
-                var chart = new Highcharts.Chart(options);
-            });
+        //         var chart = new Highcharts.Chart(options);
+        //     });
 
-        });
+        // });
+         $(document).ready(function() {
+               $.getJSON("<?php echo site_url('welcome/budgets');?>", function(json) {  
 
+              
 
+                Highcharts.chart('budget', {
+
+                    chart: {
+                        type: 'column'
+                    },
+                    plotOptions: {
+                                column: {
+                                    colorByPoint: true
+                                }
+                            },
+                            colors: [
+                                '#C1232B','#B5C334',
+                                '#FCCE10','#E87C25',
+                                '#27727B','#FE8463',
+                                '#9BCA63','#FAD860',
+                                '#F3A43B','#60C0DD',
+                                '#D7504B','#C6E579',
+                                '#F4E001','#F0805A',
+                                '#26C0C0'
+                            ],
+                    title: {
+                        text: 'Budget',
+                        style: {
+                                fontSize: '15px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+
+                    },
+                    credits: {
+                                        enabled: false
+                                       },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Budget amount in shillings'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: 'Budget Amount: <b>{point.y:,.0f} </b>'
+                    },
+                    series: [{
+                        name: 'Budegt',
+                        data:json
+                       
+                    }]
+                });  
+                            });
+        }); 
+
+         //bursaries
+          $(document).ready(function() {
+               $.getJSON("<?php echo site_url('welcome/bursaries');?>", function(json) {  
+
+              
+
+                Highcharts.chart('bursaries', {
+
+                    chart: {
+                        type: 'column'
+                    },
+                    plotOptions: {
+                                column: {
+                                    colorByPoint: true
+                                }
+                            },
+                            colors: [
+                                '#C1232B','#B5C334',
+                                '#FCCE10','#E87C25',
+                                '#27727B','#FE8463',
+                                '#9BCA63','#FAD860',
+                                '#F3A43B','#60C0DD',
+                                '#D7504B','#C6E579',
+                                '#F4E001','#F0805A',
+                                '#26C0C0'
+                            ],
+                    title: {
+                        text: 'Bursaries',
+                        style: {
+                                fontSize: '15px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+
+                    },
+                    credits: {
+                                        enabled: false
+                                       },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Bursary amount in shillings'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: 'Bursary Amount: <b>{point.y:,.0f} </b>'
+                    },
+                    series: [{
+                        name: 'Bursary',
+                        data:json
+                       
+                    }]
+                });  
+                            });
+        }); 
+
+        //camps
         $(document).ready(function() {
           
             var options = {
@@ -630,17 +928,17 @@
             });
 
         });
-
+        //camps active
         $(document).ready(function() {
                 $.getJSON('http://localhost/mara/welcome/get_camps', function (population) {
                   Highcharts.chart('camps', {
 
                 title: {
-                    text: 'TOTAL CAMPS AND SUPPORTING CAMPS ',
+                    text: 'Total camps and supporting camps ',
                     style: {
                                 fontSize: '15px',
                                 fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
+                                fontWeight: 'bold'
                             }
                 },
                 plotOptions: {
@@ -663,7 +961,7 @@
                 },
                 labels: {
                     items: [{
-                        html: 'area',
+                        html: '',
                         style: {
                             left: '50px',
                             top: '18px',
@@ -715,7 +1013,8 @@
                  });
 
          });
-        
+         
+         //Registered Leases
         $(document).ready(function() {
                $.getJSON("<?php echo site_url('welcome/reg_leases');?>", function(json) {  
 
@@ -742,11 +1041,11 @@
                                 '#26C0C0'
                             ],
                     title: {
-                        text: 'MASAI MARA REGISTERED LEASES',
+                        text: 'Registered leases',
                         style: {
-                                fontSize: '13px',
+                                fontSize: '15px',
                                 fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
+                                fontWeight: 'bold'
                             }
 
                     },
@@ -786,8 +1085,8 @@
                 });  
                             });
         });  
-
-      $(document).ready(function() {
+         //Lease Hold Fees
+        $(document).ready(function() {
             $.getJSON("<?php echo site_url('welcome/Leasehold_Fees');?>", function(json) {  
 
               
@@ -813,11 +1112,11 @@
                                 '#26C0C0'
                             ],
                     title: {
-                        text: 'MASAI MARA LEASE HOLD FEES',
+                        text: 'Leasehold fees',
                         style: {
-                                fontSize: '13px',
+                                fontSize: '15px',
                                 fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
+                                fontWeight: 'bold'
                             }
 
                     },
@@ -840,7 +1139,7 @@
                     yAxis: {
                         min: 0,
                         title: {
-                            text: 'Fees in Shillings'
+                            text: 'Fees in Kenya Shillings'
                         }
                     },
                     legend: {
@@ -850,14 +1149,15 @@
                         pointFormat: 'Fees: <b>{point.y:,.0f} Shillings</b>'
                     },
                     series: [{
-                        name: 'Leasehold Fees',
+                        name: 'Leasehold fees',
                         data:json
                        
                     }]
                 });  
                             });
         });  
-          $(document).ready(function() {
+         //Leased Acres
+        $(document).ready(function() {
              $.getJSON("<?php echo site_url('welcome/Lease_Acre');?>", function(json) {  
 
               
@@ -883,11 +1183,11 @@
                                 '#26C0C0'
                             ],
                     title: {
-                        text: 'MASAI MARA LEASED LAND IN ACRES',
+                        text: 'Leased land in acres',
                         style: {
-                                fontSize: '13px',
+                                fontSize: '15px',
                                 fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
+                                fontWeight: 'bold'
                             }
 
                     },
@@ -902,7 +1202,7 @@
                         labels: {
                             rotation: -45,
                             style: {
-                                fontSize: '13px',
+                                fontSize: '15px',
                                 fontFamily: 'Verdana, sans-serif'
                             }
                         }
@@ -910,7 +1210,7 @@
                     yAxis: {
                         min: 0,
                         title: {
-                            text: 'Leased Land in Acres'
+                            text: 'Leased land in acres'
                         }
                     },
                     legend: {
@@ -920,14 +1220,14 @@
                         pointFormat: '<b>{point.y:,.0f} Acres</b>'
                     },
                     series: [{
-                        name: 'Leased Acres',
+                        name: 'Leased acres',
                         data:json
                        
                     }]
                 });  
                             });
         });  
-
+         
 
      
         </script>
@@ -935,7 +1235,9 @@
           
         <script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="http://code.highcharts.com/modules/exporting.js"></script>
-          <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+        <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
+        <script src="https://code.highcharts.com/modules/heatmap.js"></script>
+        <script src="https://code.highcharts.com/modules/treemap.js"></script>
        <style type="text/css">
             #container {
     min-width: 300px;
@@ -947,7 +1249,7 @@
     </head>
     <body>
 
-<div class="container"><h5><center>CONSERVANCIES </center></h5></div>
+
 <div class="container">	
         <ul id="conservancies_tab"  class="nav nav-tabs">
 			<li class="active">
@@ -961,8 +1263,10 @@
 			</li>
   		    <li><a href="#5b" data-toggle="tab">EMPLOYMENT</a>
 			</li>
-			<li><a href="#6b" data-toggle="tab">BUDGET/BURSARIES</a>
+			<li><a href="#6b" data-toggle="tab">BUDGET</a>
 			</li>
+            <li><a href="#7b" data-toggle="tab">BURSARIES</a>
+            </li>
 		</ul>
 
 		<div class="tab-content clearfix">
@@ -999,11 +1303,11 @@
 
 			             <div class="row">
 			                  
-			                  <div class="col-lg-8">
+			                  <div class="col-lg-6">
 			                      <div id="land_owner" name="container"></div>
 
 			                  </div>
-			                 <div class="col-lg-4">
+			                 <div class="col-lg-6">
                                   <div id="Women_Land_Owners" name="container"></div>
 
                               </div>
@@ -1069,14 +1373,14 @@
 			            
 			        </div>     
 			  </div>
-			   <div class="tab-pane" id="6b">
+			  <div class="tab-pane" id="6b">
                       
 			        <div class="container">
 
 			             <div class="row">
 			                  
 			                  <div class="col-lg-12">
-			                      <div id="BURSARIES" name="container1"></div>
+			                      <div id="budget" name="container1"></div>
 
 			                  </div>
 			                
@@ -1085,6 +1389,22 @@
 			            
 			        </div>     
 			  </div>
+               <div class="tab-pane" id="7b">
+                      
+                    <div class="container">
+
+                         <div class="row">
+                              
+                              <div class="col-lg-12">
+                                  <div id="bursaries" name="container1"></div>
+
+                              </div>
+                            
+                             
+                         </div>
+                        
+                    </div>     
+              </div>
         
         
 			</div>

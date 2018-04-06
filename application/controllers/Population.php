@@ -23,7 +23,7 @@ public function index(){
 				$data =array_merge($location,$all);
 		
 	$this->load->view('includes/header_view');
-	$this->load->view('includes/nav_view');
+	$this->load->view('includes/population');
 	 $this->load->view('population/population',$data);
 	$this->load->view('includes/footer_view');
 
