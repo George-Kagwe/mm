@@ -1,11 +1,7 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>Line Chart</title>
-        
-        <script type="text/javascript">
-         $(document).ready(function() {
+
+ <script type="text/javascript">
+        //conservancies pie
+        $(document).ready(function() {
           $.getJSON("<?php echo site_url('welcome/Leasehold_Fee');?>", function(json) {  
 
                         Highcharts.chart('container', {
@@ -45,210 +41,8 @@
                 });
 
          });
-        $(document).ready(function() {
-           $.getJSON("<?php echo site_url('welcome/clean');?>", function(json) {  
-
-               
-
-                Highcharts.chart('conservancy', {
-
-                    chart: {
-                        type: 'column'
-                    },
-
-                    plotOptions: {
-                                column: {
-                                    colorByPoint: true
-                                }
-                            },
-                            colors: [
-                                '#C1232B','#B5C334',
-                                '#FCCE10','#E87C25',
-                                '#27727B','#FE8463',
-                                '#9BCA63','#FAD860',
-                                '#F3A43B','#60C0DD',
-                                '#D7504B','#C6E579',
-                                '#F4E001','#F0805A',
-                                '#26C0C0'
-                            ],
-                    title: {
-                        text: 'MASAI MARA CONSERVANCIES BY SIZE',
-                        style: {
-                                fontSize: '15px',
-                                fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
-                            }
-
-                    },
-                    credits: {
-                                        enabled: false
-                                       },
-                    subtitle: {
-                        text: ''
-                    },
-                    xAxis: {
-                        type: 'category',
-                        labels: {
-                            rotation: -45,
-                            style: {
-                                fontSize: '13px',
-                                fontFamily: 'Verdana, sans-serif'
-                            }
-                        }
-                    },
-                    yAxis: {
-                        min: 0,
-                        title: {
-                            text: 'Size (Acres)'
-                        }
-                    },
-                    legend: {
-                        enabled: false
-                    },
-                    tooltip: {
-                        pointFormat: 'Size: <b>{point.y:,.0f} acres</b>'
-                    },
-                    series: [{
-                        name: 'Population',
-                        data:json
-                       
-                    }]
-                });  
-                            });
-
-        });
-        $(document).ready(function() {
-            $.getJSON('http://localhost/mara/welcome/clean', function (population) {
-                          
-                    Highcharts.chart('conservancy_pie', {
-                        chart: {
-                            type: 'pie',
-                            options3d: {
-                                enabled: true,
-                                alpha: 45,
-                                beta: 0
-                            }
-                        },
-                        plotOptions: {
-                column: {
-                    colorByPoint: true
-                }
-            },
-            colors: [
-                '#C1232B','#B5C334',
-                '#FCCE10','#E87C25',
-                '#27727B','#FE8463',
-                '#9BCA63','#FAD860',
-                '#F3A43B','#60C0DD',
-                '#D7504B','#C6E579',
-                '#F4E001','#F0805A',
-                '#26C0C0'
-            ],
-                        title: {
-                            text: 'AREA SIZE AS PERCENTAGE',
-                            style: {
-                                fontSize: '15px',
-                                fontFamily: 'Verdana, sans-serif',
-                                fontWeight: 'normal'
-                            }
-                        },
-                        credits: {
-                        enabled: false
-                       },
-                        tooltip: {
-                            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                        },
-                        plotOptions: {
-                            pie: {
-                                allowPointSelect: true,
-                                cursor: 'pointer',
-                                depth: 35,
-                                dataLabels: {
-                                    enabled: true,
-                                    format: '{point.name}'
-                                }
-                            }
-                        },
-                        series: [{
-                            type: 'pie',
-                            name: 'AREA SIZE AS PERCENTAGE',
-                            data:population
-                        }]
-                    });
-                });  
-        });  
-
-        //women land woners
-        // $(document).ready(function() {
-                    //    $.getJSON("<?php echo site_url('welcome/Women_Land_Owners');?>", function(json) {  
-
-                          
-
-                    //         Highcharts.chart('Women_Land_Owners', {
-
-                    //             chart: {
-                    //                 type: 'column'
-                    //             },
-                    //             plotOptions: {
-                    //                         column: {
-                    //                             colorByPoint: true
-                    //                         }
-                    //                     },
-                    //                     colors: [
-                    //                         '#C1232B','#B5C334',
-                    //                         '#FCCE10','#E87C25',
-                    //                         '#27727B','#FE8463',
-                    //                         '#9BCA63','#FAD860',
-                    //                         '#F3A43B','#60C0DD',
-                    //                         '#D7504B','#C6E579',
-                    //                         '#F4E001','#F0805A',
-                    //                         '#26C0C0'
-                    //                     ],
-                    //             title: {
-                    //                 text: 'MASAI MARA WOMEN LAND OWNERS',
-                    //                 style: {
-                    //                         fontSize: '15px',
-                    //                         fontFamily: 'Verdana, sans-serif',
-                    //                         fontWeight: 'normal'
-                    //                     }
-
-                    //             },
-                    //             credits: {
-                    //                                 enabled: false
-                    //                                },
-                    //             subtitle: {
-                    //                 text: ''
-                    //             },
-                    //             xAxis: {
-                    //                 type: 'category',
-                    //                 labels: {
-                    //                     rotation: -45,
-                    //                     style: {
-                    //                         fontSize: '13px',
-                    //                         fontFamily: 'Verdana, sans-serif'
-                    //                     }
-                    //                 }
-                    //             },
-                    //             yAxis: {
-                    //                 min: 0,
-                    //                 title: {
-                    //                     text: 'Total Women Land Owners'
-                    //                 }
-                    //             },
-                    //             legend: {
-                    //                 enabled: false
-                    //             },
-                    //             tooltip: {
-                    //                 pointFormat: ' <b>Total of {point.y:,.0f} Women Land Owners</b>'
-                    //             },
-                    //             series: [{
-                    //                 name: 'WOMEN LAND OWNERS',
-                    //                 data:json
-                                   
-                    //             }]
-                    //         });  
-                    //                     });
-        // });
+        
+        //women land owners tree map
          $(document).ready(function() {
 
               $.getJSON("<?php echo site_url('welcome/women_Land_Owners');?>", function(json) {  
@@ -276,10 +70,11 @@
                                                         dataLabels: {
                                                             enabled: true,
                                                             style: {
+                                                                color: 'black',
                                                                 textOutline: 'none',
                                                                 fontFamily: 'Roboto',
                                                                 fontWeight: '300',
-                                                                fontSize: '1rem'
+                                                                fontSize: '1.5rem'
                                                             }
                                                         }
                                                     }
@@ -381,183 +176,11 @@
                             });
         });  
 
-        //land Leases
-        $(document).ready(function() {
-          
-            var options = {
-                chart: {
-                    renderTo: 'land_leases',
-                    type: 'column',
-                    inverted:false,
-                    marginRight: 130,
-                    marginBottom: 150
-                },
-                title: {
-                    text: 'LAND LEASES',
-                    x: -20 //center
-                }, 
-                credits: {
-                      enabled: false
-                },
-                subtitle: {
-                    text: '',
-                    x: -20
-                },
-                xAxis: {
-                    categories: []
-                },
-                yAxis: {
-                    title: {
-                        text: 'SIZE IN ACRES'
-                    },
-                    plotLines: [{
-                        value: 0,
-                        width: 1,
-                        color: '#808080',
-                    }]
-                },
-                tooltip: {
-                    formatter: function() {
-                            return '<b>'+ this.series.name +'</b><br/>'+
-                            this.x +': '+ this.y;
-                    }
-                },
-                legend: {
-                    padding:3,
-                    itemMarginLeft: 5,
-                     align: 'center',
-                    verticalAlign: 'middle',
-                    layout: 'horizontal',
-                    x: -100,
-                    y: 160,
-                    borderWidth: 0,
-                    itemStyle: {
-                    lineHeight: '54px'
-                }
-                },
-                 plotOptions: {
-                      series: {
-                          borderWidth: 0,
-                          dataLabels: {
-                              enabled: false,
-                              format: '{point.x[-4]:.1f}%'
-                          }
-
-                      }
-                  },
-
-                series: []
-            }
-   
-            $.getJSON("<?php echo site_url('welcome/conservancies');?>", function(json) {
-                
-                options.xAxis.categories = json[0]['data'];
-                options.series.push(json[13]);
-                options.series.push(json[14]);
-                options.series.push(json[15]);
-             
-                
-                var chart = new Highcharts.Chart(options);
-            });
-
-        });
+        
 
 
-        //Employment
-        // $(document).ready(function() {
-          
-        //     var options = {
-        //         chart: {
-        //             renderTo: 'EMPLOYMENT',
-        //             type: 'column',
-        //             inverted:false,
-        //             marginRight: 130,
-        //             marginBottom: 150
-        //         },
-        //         title: {
-        //             text: 'DIRECT EMPLOYMENT VS POPULATION AROUND CONSERVANCY',
-        //             x: -20 //center
-        //         }, 
-        //         credits: {
-        //               enabled: false
-        //         },
-        //           plotOptions: {
-        //                         column: {
-        //                             colorByPoint: true
-        //                         }
-        //                     },
-        //                     colors: [
-        //                         '#C1232B','#B5C334',
-        //                         '#FCCE10','#E87C25',
-        //                         '#27727B','#FE8463',
-        //                         '#9BCA63','#FAD860',
-        //                         '#F3A43B','#60C0DD',
-        //                         '#D7504B','#C6E579',
-        //                         '#F4E001','#F0805A',
-        //                         '#26C0C0'
-        //                     ],
-        //         subtitle: {
-        //             text: '',
-        //             x: -20
-        //         },
-        //         xAxis: {
-        //             categories: []
-        //         },
-        //         yAxis: {
-        //             title: {
-        //                 text: 'NUMBER OF PEPOPLE'
-        //             },
-        //             plotLines: [{
-        //                 value: 0,
-        //                 width: 1,
-        //                 color: '#808080',
-        //             }]
-        //         },
-        //         tooltip: {
-        //             formatter: function() {
-        //                     return '<b>'+ this.series.name +'</b><br/>'+
-        //                     this.x +': '+ this.y;
-        //             }
-        //         },
-        //         legend: {
-        //             padding:3,
-        //             itemMarginLeft: 5,
-        //              align: 'center',
-        //             verticalAlign: 'middle',
-        //             layout: 'horizontal',
-        //             x: -100,
-        //             y: 160,
-        //             borderWidth: 0,
-        //             itemStyle: {
-        //             lineHeight: '54px'
-        //         }
-        //         },
-        //          plotOptions: {
-        //               series: {
-        //                   borderWidth: 0,
-        //                   dataLabels: {
-        //                       enabled: false,
-        //                       format: '{point.x[-4]:.1f}%'
-        //                   }
+       //employment
 
-        //               }
-        //           },
-
-        //         series: []
-        //     }
-   
-        //     $.getJSON("<?php echo site_url('welcome/get_employment');?>", function(json) {
-                
-        //         options.xAxis.categories = json[0]['data'];
-        //         options.series.push(json[16]);
-        //         // options.series.push(json[17]);
-              
-             
-                
-        //         var chart = new Highcharts.Chart(options);
-        //     });
-
-        // });
         $(document).ready(function() {
                $.getJSON("<?php echo site_url('welcome/employment');?>", function(json) {  
 
@@ -630,82 +253,7 @@
         }); 
          
          //budgets
-        // $(document).ready(function() {
-          
-        //     var options = {
-        //         chart: {
-        //             renderTo: 'BURSARIES',
-        //             type: 'column',
-        //             inverted:false,
-        //             marginRight: 130,
-        //             marginBottom: 150
-        //         },
-        //         title: {
-        //             text: 'BURSARIES ISSUED VS BUDGET',
-        //             x: -20 //center
-        //         }, 
-        //         credits: {
-        //               enabled: false
-        //         },
-        //         subtitle: {
-        //             text: '',
-        //             x: -20
-        //         },
-        //         xAxis: {
-        //             categories: []
-        //         },
-        //         yAxis: {
-        //             title: {
-        //                 text: 'TOTAL AMOUNT'
-        //             },
-        //             plotLines: [{
-        //                 value: 0,
-        //                 width: 1,
-        //                 color: '#808080',
-        //             }]
-        //         },
-        //         tooltip: {
-        //             pointFormat: 'Amount: <b>{point.y:,.0f} shillings</b>'
-        //         },
-        //         legend: {
-        //             padding:3,
-        //             itemMarginLeft: 5,
-        //              align: 'center',
-        //             verticalAlign: 'middle',
-        //             layout: 'horizontal',
-        //             x: -100,
-        //             y: 160,
-        //             borderWidth: 0,
-        //             itemStyle: {
-        //             lineHeight: '54px'
-        //         }
-        //         },
-        //          plotOptions: {
-        //               series: {
-        //                   borderWidth: 0,
-        //                   dataLabels: {
-        //                       enabled: false,
-        //                       format: '{point.x[-4]:.1f}%'
-        //                   }
-
-        //               }
-        //           },
-
-        //         series: []
-        //     }
-   
-        //     $.getJSON("<?php echo site_url('welcome/budget');?>", function(json) {
-                
-        //         options.xAxis.categories = json[0]['data'];
-        //         options.series.push(json[22]);
-        //         options.series.push(json[23]);
-              
-             
-                
-        //         var chart = new Highcharts.Chart(options);
-        //     });
-
-        // });
+        
          $(document).ready(function() {
                $.getJSON("<?php echo site_url('welcome/budgets');?>", function(json) {  
 
@@ -849,85 +397,7 @@
                             });
         }); 
 
-        //camps
-        $(document).ready(function() {
-          
-            var options = {
-                chart: {
-                    renderTo: 'campss',
-                    type: 'column',
-                    inverted:false,
-                    marginRight: 130,
-                    marginBottom: 150
-                },
-                title: {
-                    text: 'CAMPS',
-                    x: -20 //center
-                }, 
-                credits: {
-                      enabled: false
-                },
-                subtitle: {
-                    text: '',
-                    x: -20
-                },
-                xAxis: {
-                    categories: []
-                },
-                yAxis: {
-                    title: {
-                        text: 'TOTAL'
-                    },
-                    plotLines: [{
-                        value: 0,
-                        width: 1,
-                        color: '#808080',
-                    }]
-                },
-                tooltip: {
-                    formatter: function() {
-                            return '<b>'+ this.series.name +'</b><br/>'+
-                            this.x +': '+ this.y;
-                    }
-                },
-                legend: {
-                    padding:3,
-                    itemMarginLeft: 5,
-                     align: 'center',
-                    verticalAlign: 'middle',
-                    layout: 'horizontal',
-                    x: -100,
-                    y: 160,
-                    borderWidth: 0,
-                    itemStyle: {
-                    lineHeight: '54px'
-                }
-                },
-                 plotOptions: {
-                      series: {
-                          borderWidth: 0,
-                          dataLabels: {
-                              enabled: false,
-                              format: '{point.x[-4]:.1f}%'
-                          }
-
-                      }
-                  },
-
-                series: []
-            }
-   
-            $.getJSON("<?php echo site_url('welcome/conservancies');?>", function(json) {
-                
-                options.xAxis.categories = json[0]['data'];
-                 options.series.push(json[3]);
-                options.series.push(json[4]);
-               
-                
-                var chart = new Highcharts.Chart(options);
-            });
-
-        });
+       
         //camps active
         $(document).ready(function() {
                 $.getJSON('http://localhost/mara/welcome/get_camps', function (population) {
@@ -941,21 +411,21 @@
                                 fontWeight: 'bold'
                             }
                 },
-                plotOptions: {
-                                            column: {
-                                                colorByPoint: true
-                                            }
-                                        },
-                                        colors: [
-                                            '#C1232B','#B5C334',
-                                            '#FCCE10','#E87C25',
-                                            '#27727B','#FE8463',
-                                            '#9BCA63','#FAD860',
-                                            '#F3A43B','#60C0DD',
-                                            '#D7504B','#C6E579',
-                                            '#F4E001','#F0805A',
-                                            '#26C0C0'
-                                        ],
+                // plotOptions: {
+                //                             column: {
+                //                                 colorByPoint: true
+                //                             }
+                //                         },
+                                        // colors: [
+                                        //     '#C1232B','#B5C334',
+                                        //     '#FCCE10','#E87C25',
+                                        //     '#27727B','#FE8463',
+                                        //     '#9BCA63','#FAD860',
+                                        //     '#F3A43B','#60C0DD',
+                                        //     '#D7504B','#C6E579',
+                                        //     '#F4E001','#F0805A',
+                                        //     '#26C0C0'
+                                        // ],
                 xAxis: {
                     categories: population[0]['data']
                 },
@@ -969,12 +439,19 @@
                         }
                     }]
                 },
+                 yAxis: {
+                       allowDecimals: false,
+                        min: 0,
+                        title: {
+                            text: 'Total camps'
+                        }
+                    },
                 series: [{
                     type: 'column',
                     name: 'Total Camps',
                     data:  population[3]['data']
                 },  {
-                    type: 'spline',
+                    type: 'column',
                     name: 'Supporting Camps',
                     data:  population[4]['data'],
                     marker: {
@@ -1008,6 +485,59 @@
                 //         enabled: false
                 //     }
                 // }]
+
+            });
+                 });
+
+         });
+        //loc
+        $(document).ready(function() {
+                $.getJSON('http://localhost/mara/welcome/loc', function (population) {
+                  Highcharts.chart('loc', {
+
+                title: {
+                    text: 'Male LOC and Female LOC compared ',
+                    style: {
+                                fontSize: '15px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+                },
+               
+                xAxis: {
+                    categories: population[0]['data']
+                },
+                labels: {
+                    items: [{
+                        html: '',
+                        style: {
+                            left: '50px',
+                            top: '18px',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                        }
+                    }]
+                },
+                 yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Total LOC'
+                        }
+                    },
+                series: [{
+                    type: 'column',
+                    name: 'Men LOC',
+                    data:  population[8]['data']
+                },  {
+                    type: 'column',
+                    name: 'Women LOC',
+                    data:  population[9]['data'],
+                    marker: {
+                        lineWidth: 2,
+                        lineColor: Highcharts.getOptions().colors[3],
+                        fillColor: 'white'
+                    }
+                }]
+               
 
             });
                  });
@@ -1068,7 +598,7 @@
                     yAxis: {
                         min: 0,
                         title: {
-                            text: 'Size (Acres)'
+                            text: 'Total registered leases'
                         }
                     },
                     legend: {
@@ -1230,7 +760,7 @@
          
 
      
-        </script>
+</script>
 
           
         <script src="http://code.highcharts.com/highcharts.js"></script>
@@ -1246,19 +776,29 @@
     margin: 1em auto;
 }
         </style>
-    </head>
-    <body>
+   
 
 
 <div class="container">	
-        <ul id="conservancies_tab"  class="nav nav-tabs">
-			<li class="active">
+        <ul id="conservancies_tab"  class="nav nav-tabs ">
+			<!-- <li class="active">
                <a  href="#1b" data-toggle="tab">CONSERVANCIES</a>
-			</li>
+			</li> -->
+            <li class="active">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      CONSERVANCIES  <span class="fa fa-chevron-down"></span></a>
+                    <ul class="dropdown-menu" id="collapsed">
+                        <li><a href="#1b" data-toggle="tab">ALL CONSERVANCIES</a></li>
+                        <li><a href="#2b" data-toggle="tab">CUMULATIVE GROWTH</a></li>
+                       
+                    </ul>
+            </li>
 			<li><a href="#2b" data-toggle="tab">LAND OWNERSHIP</a>
 			</li>
 			<li><a href="#3b" data-toggle="tab">LAND LEASES</a>
 			</li>
+            <li><a href="#3c" data-toggle="tab">LOC</a>
+            </li>
 			<li><a href="#4b" data-toggle="tab">CAMPS</a>
 			</li>
   		    <li><a href="#5b" data-toggle="tab">EMPLOYMENT</a>
@@ -1341,6 +881,24 @@
 			            
 			        </div>
 			  </div>
+              <div class="tab-pane " id="3c">
+                    
+                  
+                    <div class="container">
+
+                         <div class="row">
+                              
+                              <div class="col-lg-12">
+                                  <div id="loc" name="container"></div>
+
+                              </div>
+                              
+                            
+                             
+                         </div>
+                        
+                    </div>
+              </div>
 			  <div class="tab-pane" id="4b">
                  
 			        <div class="container">
@@ -1409,4 +967,6 @@
         
 			</div>
          </div>
+
+
 

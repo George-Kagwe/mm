@@ -142,6 +142,16 @@ class Mara extends CI_Model {
      $result = $this->db->query($get);
     return $result->result();
 	}
+	public function loc(){
+		$get="      SELECT  Firm_ID,Firm_Name,Year,Acres,Total_Camps,Supporting_Camps,Bed,Land_Owners,
+		Women_Land_Owners,Male_Loc,Female_Loc,Rangers,Trained,Roads,Reg_Leases,Lease_Acre,Leasehold_Fees,Direct_Employment,Population_Around,Cattles,Waterpans,Springs,Rivers,Vegetation,Mammals,Birds,Training_Sessions,Legal_Gov,Bursary,Budget
+
+            FROM 
+    firm  where Male_Loc >1
+    order by Male_Loc ASC";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
 	public function get_camps(){
 		$get="      SELECT  Firm_ID,Firm_Name,Year,Acres,Total_Camps,Supporting_Camps,Bed,Land_Owners,
 		Women_Land_Owners,Male_Loc,Female_Loc,Rangers,Trained,Roads,Reg_Leases,Lease_Acre,Leasehold_Fees,Direct_Employment,Population_Around,Cattles,Waterpans,Springs,Rivers,Vegetation,Mammals,Birds,Training_Sessions,Legal_Gov,Bursary,Budget

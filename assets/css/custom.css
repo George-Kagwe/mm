@@ -16,7 +16,7 @@
   margin-top:-1%;
   height: 50px !important;
 }
-	.navbar {
+  .navbar {
 min-height: 50px;
  
 }
@@ -35,7 +35,7 @@ min-height: 50px;
  #logo{
   height: 50px !important;
 }
-	.navbar {
+  .navbar {
 min-height: 70px;
  
 }
@@ -62,8 +62,8 @@ padding: 9px 10px !important;
 }
 
 .navbar{
-	/*background: #e3000f; red*/
-/*	background: #d5ca85;*/
+  /*background: #e3000f; red*/
+/*  background: #d5ca85;*/
 background: #e52d27;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

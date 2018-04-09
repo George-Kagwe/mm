@@ -78,7 +78,7 @@
             var options = {
                 chart: {
                     renderTo: 'instagram',
-                    type: 'areaspline',
+                    type: 'line',
                     marginRight: 130,
                     marginBottom: 25
                 },
