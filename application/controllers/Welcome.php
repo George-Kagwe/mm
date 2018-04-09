@@ -1380,6 +1380,26 @@ class Welcome extends CI_Controller {
 			
 			}
 
+			public function get_cumulative(){
+			$data = $this->mara->get_cumulative();
+           
+           // var_dump($data);die();
+			$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    $JsonArray[] = array(($row->year),floatval($row->conservancies ) );
+			}
+
+			// $labeledArray = array( 
+			    
+			//     "data" => $JsonArray
+			// );
+
+			echo json_encode($JsonArray);
+			
+			}
+
 
 
 

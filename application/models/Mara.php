@@ -32,10 +32,10 @@ class Mara extends CI_Model {
 
 	}
 
-	function get_data()
+	function get_cumulative()
 	{
-	$this->db->select('month, wordpress, codeigniter, highcharts');
-	$this->db->from('demo');
+	$this->db->select('year, conservancies');
+	$this->db->from('cumulative_growth');
 
 	$query = $this->db->get();
 	return $query->result();

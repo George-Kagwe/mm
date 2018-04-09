@@ -42,6 +42,78 @@
 
          });
         
+        //total land owners  
+        $(document).ready(function() {
+           $.getJSON("<?php echo site_url('welcome/get_cumulative');?>", function(json) {  
+
+              
+
+                Highcharts.chart('get_cumulative', {
+
+                    chart: {
+                        type: 'line'
+                    },
+                    plotOptions: {
+                                column: {
+                                    colorByPoint: true
+                                }
+                            },
+                            colors: [
+                                '#C1232B','#B5C334',
+                                '#FCCE10','#E87C25',
+                                '#27727B','#FE8463',
+                                '#9BCA63','#FAD860',
+                                '#F3A43B','#60C0DD',
+                                '#D7504B','#C6E579',
+                                '#F4E001','#F0805A',
+                                '#26C0C0'
+                            ],
+                    title: {
+                        text: 'Cumulative growth of conservancies',
+                        style: {
+                                fontSize: '15px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+
+                    },
+                    credits: {
+                                        enabled: false
+                                       },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        allowDecimals: false,
+                        min: 0,
+                        title: {
+                            text: 'Total conservancies'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: ' Total of <b>{point.y:,.0f} conservancies</b>'
+                    },
+                    series: [{
+                        name: 'Land Owners',
+                        data:json
+                       
+                    }]
+                });  
+                            });
+        });  
         //women land owners tree map
          $(document).ready(function() {
 
@@ -789,7 +861,7 @@
                       CONSERVANCIES  <span class="fa fa-chevron-down"></span></a>
                     <ul class="dropdown-menu" id="collapsed">
                         <li><a href="#1b" data-toggle="tab">ALL CONSERVANCIES</a></li>
-                        <li><a href="#2b" data-toggle="tab">CUMULATIVE GROWTH</a></li>
+                        <li><a href="#1a" data-toggle="tab">CUMULATIVE GROWTH</a></li>
                        
                     </ul>
             </li>
@@ -835,6 +907,24 @@
 			            
 			        </div>
 			  </div>
+              <div class="tab-pane active" id="1a">
+                    
+                    
+                    <div class="container">
+
+                         <div class="row">
+                          <div class="col-lg-12">
+                                  <div id="get_cumulative" name="container"></div>
+
+                              </div>
+                              
+
+                            
+                             
+                         </div>
+                        
+                    </div>
+              </div>
 
 			   <div class="tab-pane " id="2b">
                     
