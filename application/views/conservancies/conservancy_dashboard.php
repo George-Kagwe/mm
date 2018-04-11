@@ -1,4 +1,5 @@
 
+
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript">
         //facebook activities
@@ -72,7 +73,68 @@
                         var chart = new Highcharts.Chart(options);
                     });
         });
-        
+        //Instgram Activities
+        $(document).ready(function() {
+            var options = {
+                chart: {
+                    renderTo: 'instagram',
+                    type: 'line',
+                    marginRight: 130,
+                    marginBottom: 25
+                },
+                title: {
+                    text: 'INSTAGRAM ACTIVITIES',
+                    x: -20 //center
+                }, 
+                credits: {
+                      enabled: false
+                },
+                subtitle: {
+                    text: '',
+                    x: -20
+                },
+                xAxis: {
+                    categories: []
+                },
+                yAxis: {
+                    title: {
+                        text: 'ACTIVITY TOTAL'
+                    },
+                    plotLines: [{
+                        value: 0,
+                        width: 1,
+                        color: '#808080'
+                    }]
+                },
+                tooltip: {
+                    formatter: function() {
+                            return '<b>'+ this.series.name +'</b><br/>'+
+                            this.x +': '+ this.y;
+                    }
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'top',
+                    x: -10,
+                    y: 100,
+                    borderWidth: 0
+                },
+
+                series: []
+            }
+   
+            $.getJSON("<?php echo site_url('welcome/instagram');?>", function(json) {
+                
+                options.xAxis.categories = json[0]['data'];
+                options.series.push(json[1]);
+                options.series.push(json[2]);
+                options.series.push(json[3]);
+                options.series.push(json[4]);
+               
+                var chart = new Highcharts.Chart(options);
+            });
+        });
         //Twitter Activities
         $(document).ready(function() {
             var options = {
@@ -146,7 +208,7 @@
                     marginBottom: 100
                 },
                 title: {
-                    text: 'Twitter followers',
+                    text: 'Twitter folowers',
                     x: -20 //center
                 }, 
                 credits: {
@@ -266,7 +328,7 @@
             var options = {
                 chart: {
                     renderTo: 'instagram_activities',
-                    type: 'line',
+                    type: 'areaspline',
                     marginRight: 130,
                     marginBottom: 100
                 },
@@ -523,46 +585,41 @@
 </script>
         <script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="http://code.highcharts.com/modules/exporting.js"></script>
-<div class="container"> 
-        <ul id="conservancies_tab"  class="nav nav-tabs">
-            <li class="active">
-               <a  href="#1b" data-toggle="tab">FACEBOOK ACTIVITES</a>
-            </li>
-            <!-- li><a href="#2a" data-toggle="tab">TWITTER ACTIVITIES</a>
-            </li>
-            <li><a href="#2b" data-toggle="tab">TWITTER FOLLOWERS</a>
-            </li> -->
-            <!-- <li><a href="#3a" data-toggle="tab">WEBSITE VISITS</a>
-            <li><a href="#3c" data-toggle="tab">WEBSITE VISIT DURATION</a>
-            <li><a href="#3b" data-toggle="tab">WEBSITE ACTIVITIES</a>
 
-            </li> -->
-  
-             <li>
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  TWITTER  <span class="fa fa-chevron-down"></span></a>
-                <ul class="dropdown-menu" id="collapsed">
-                    <li><a href="#2a" data-toggle="tab">ACTIVITIES</a></li>
-                    <li><a href="#2b" data-toggle="tab">FOLLOWERS</a></li>
-                </ul>
-              </li>
-              <li>
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                      WEBSITE  <span class="fa fa-chevron-down"></span></a>
-                    <ul class="dropdown-menu" id="collapsed">
-                        <li><a href="#3a" data-toggle="tab">VISITS</a></li>
-                        <li><a href="#3c" data-toggle="tab">VISIT DURATION</a></li>
-                        <li><a href="#3b" data-toggle="tab">ACTIVITIES</a></li>
-                    </ul>
-               </li>
-            
-        </ul>
+<div class="container">
+	
 
-        <div class="tab-content clearfix">
-              <div class="tab-pane active" id="1b">
-                    
-                    
-                    <div class="container">
+			        
+			<ul class="nav nav-tabs " id="conservancies_tab">
+			    <li class="active"><a href="#facebooks" data-toggle="tab">FACEBOOK</a></li>
+			    <li class="dropdown">
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#twitter">TWITTER <span class="fa fa-chevron-down"></span></a>
+			        <ul class="dropdown-menu">
+			             <li><a href="#2a" data-toggle="tab">ACTIVITIES</a></li>
+                         <li><a href="#2b" data-toggle="tab">FOLLOWERS</a></li>
+			        </ul>
+			    </li>
+			     <li class="dropdown">
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#twitter">INSTAGRAM <span class="fa fa-chevron-down"></span></a>
+			        <ul class="dropdown-menu">
+			             <li><a href="#3a" data-toggle="tab">FOLLOWERS</a></li>
+                         <li><a href="#3b" data-toggle="tab">ACTIVITIES</a></li>
+			        </ul>
+			    </li>
+			      <li class="dropdown">
+			    <a class="dropdown-toggle" data-toggle="dropdown" href="#twitter">WEBSITE <span class="fa fa-chevron-down"></span></a>
+			        <ul class="dropdown-menu">
+			            <li><a href="#4a" data-toggle="tab">VISITS</a></li>
+                        <li><a href="#4b" data-toggle="tab">VISIT DURATION</a></li>
+                        <li><a href="#4c" data-toggle="tab">ACTIVITIES</a></li>
+			        </ul>
+			    </li>
+			   
+			</ul>
+             <br>
+			<div class="tab-content">
+			    <div class="tab-pane active" id="facebooks">
+			         <div class="container">
 
                          <div class="row">
                           <div class="col-lg-12">
@@ -576,12 +633,10 @@
                          </div>
                         
                     </div>
-              </div>
+			    </div>
 
-               <div class="tab-pane " id="2a">
-                    
-                  
-                    <div class="container">
+			    <div class="tab-pane" id="2a">
+			         <div class="container">
 
                          <div class="row">
                               
@@ -594,11 +649,9 @@
                          </div>
                         
                     </div>
-              </div>
-              <div class="tab-pane " id="2b">
-                    
-                  
-                    <div class="container">
+			    </div>
+			    <div class="tab-pane" id="2b">
+			           <div class="container">
 
                          <div class="row">
                               
@@ -611,127 +664,83 @@
                          </div>
                         
                     </div>
-              </div>
-               <div class="tab-pane " id="3b">
-                    
-                  
-                    <div class="container">
+			    </div>
+			     <div class="tab-pane" id="3a">
+			         <div class="container">
+
+                         <div class="row">
+                              
+                              
+                             <div class="col-lg-12">
+                                  <div id="instagram_followers" name="instagram_followers"></div>
+
+                              </div>
+                             
+                         </div>
+                        
+                    </div>
+			    </div>
+			    <div class="tab-pane" id="3b">
+			           <div class="container">
+
+                         <div class="row">
+                              
+                              <div class="col-lg-12">
+                                  <div id="instagram_activities" name="instagram_activities"></div>
+
+                              </div>
+                            
+                             
+                         </div>
+                        
+                    </div>
+			    </div>
+			     <div class="tab-pane" id="4a">
+			         <div class="container">
+
+                         <div class="row">
+                              
+                              
+                             <div class="col-lg-12">
+                                  <div id="website_visits" name="website_visits"></div>
+
+                              </div>
+                             
+                         </div>
+                        
+                    </div>
+			    </div>
+			    <div class="tab-pane" id="4b">
+			           <div class="container">
+
+                         <div class="row">
+                              
+                              <div class="col-lg-12">
+                                   <div id="visit_duration" name="visit_duration"></div>
+
+                              </div>
+                            
+                             
+                         </div>
+                        
+                    </div>
+			    </div>
+			    <div class="tab-pane" id="4c">
+			           <div class="container">
 
                          <div class="row">
                               
                               <div class="col-lg-12">
                                   <div id="website_activities" name="website_activities"></div>
-
                               </div>
-                              
                             
                              
                          </div>
                         
                     </div>
-              </div>
-              <div class="tab-pane " id="3a">
-                    
-                  
-                    <div class="container">
+			    </div>
+			    
 
-                         <div class="row">
-                              
-                              <div class="col-lg-12">
-                                  <div id="website_visits" name="website_visits"></div>
+			</div>
 
-                              </div>
-                              
-                            
-                             
-                         </div>
-                        
-                    </div>
-              </div>
-              <div class="tab-pane " id="3c">
-                    
-                  
-                    <div class="container">
-
-                         <div class="row">
-                              
-                              <div class="col-lg-12">
-                                  <div id="visit_duration" name="visit_duration"></div>
-
-                              </div>
-                              
-                            
-                             
-                         </div>
-                        
-                    </div>
-              </div>
-              <div class="tab-pane" id="4b">
-                 
-                    <div class="container">
-
-                         <div class="row">
-                              
-                              <div class="col-lg-12">
-                                  <div id="camps" name="camps"></div>
-
-                              </div>
-                            
-                             
-                         </div>
-                        
-                    </div>     
-              </div>
-              <div class="tab-pane" id="5b">
-                     
-                    <div class="container">
-
-                         <div class="row">
-                              
-                              <div class="col-lg-12">
-                                  <div id="EMPLOYMENT" name="container1"></div>
-
-                              </div>
-                            
-                             
-                         </div>
-                        
-                    </div>     
-              </div>
-              <div class="tab-pane" id="6b">
-                      
-                    <div class="container">
-
-                         <div class="row">
-                              
-                              <div class="col-lg-12">
-                                  <div id="budget" name="container1"></div>
-
-                              </div>
-                            
-                             
-                         </div>
-                        
-                    </div>     
-              </div>
-               <div class="tab-pane" id="7b">
-                      
-                    <div class="container">
-
-                         <div class="row">
-                              
-                              <div class="col-lg-12">
-                                  <div id="bursaries" name="container1"></div>
-
-                              </div>
-                            
-                             
-                         </div>
-                        
-                    </div>     
-              </div>
-        
-        
-            </div>
-         </div>
-
+</div>

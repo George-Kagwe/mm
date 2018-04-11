@@ -3,22 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mara extends CI_Model {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
-
+	
 	public function index()
 	{
 	$this->load->view('chart');
@@ -53,12 +38,7 @@ class Mara extends CI_Model {
 
 	function get_twitter()
 	{
-	// $this->db->select('month,tweets,impressions,profile_visits,mentions, new_followers,
-	// 	total_followers');
-	// $this->db->from('twitter');
-	// $this->db->where('tweets')
-	// $query = $this->db->get();
-	// return $query->result();
+	
 		$get="      SELECT  month,tweets,impressions,profile_visits,mentions, new_followers,
 	 	total_followers
 
@@ -235,7 +215,7 @@ public function Leasehold_Fees(){
 		$get="      SELECT  Firm_Name as name ,Acres as y, Year as z
             FROM  firm
             
-     order by Acres ASC ";
+     order by Acres DESC ";
      $result = $this->db->query($get);
     return $result->result();
 	}
@@ -284,6 +264,52 @@ public function years(){
 	}
 
 
+
+public function get_beds(){
+		$get="      SELECT Firm_Name as name , bed  as value 
+
+            FROM 
+    firm    where bed >0
+    order by bed asc";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
+
+public function get_rangers(){
+		$get="      SELECT Firm_Name as name , Rangers  as value 
+
+            FROM 
+    firm    where Rangers >0
+    order by Rangers asc";
+     $result = $this->db->query($get);
+    return $result->result();
+	}
+
+ public function get_totals(){
+ 	$get ="SELECT
+ 	      count(*) as all_conservancies,
+ 	      sum(acres) as total_acres,
+ 	      sum(Total_Camps) as Total_Camps,
+ 	      sum(Supporting_Camps) as Supporting_Camps,
+ 	      sum(Land_Owners) as Land_Owners,
+ 	      sum(Women_Land_Owners) as Women_Land_Owners,
+ 	      sum(Male_Loc) as Male_Loc,
+ 	      sum(Female_Loc) as Female_Loc,
+ 	      sum(Rangers) as Rangers,
+ 	      sum(Trained) as Trained,
+ 	      sum(Roads) as Roads,
+ 	      sum(Reg_Leases) as Reg_Leases,
+ 	      sum(Lease_Acre) as Lease_Acre,
+ 	      sum(Leasehold_Fees) as Leasehold_Fees,
+ 	      sum(Direct_Employment) as Direct_Employment,
+ 	      sum(Population_Around) as Population_Around,
+ 	      sum(Cattles) as Cattles,
+ 	      sum(Budget) as Budget,
+ 	      sum(Bursary) as Bursary
+ 	      from firm" ;
+ 	 $result = $this->db->query($get);
+    return $result->result();
+ }
 
 	
 

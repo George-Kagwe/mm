@@ -3,32 +3,78 @@
         //conservancies pie
         $(document).ready(function() {
           $.getJSON("<?php echo site_url('welcome/Leasehold_Fee');?>", function(json) {  
-
+                              Highcharts.setOptions({
+                           
+                                lang: {
+                                    thousandsSep: ','
+                                }
+                            });
                         Highcharts.chart('container', {
 
                             chart: {
-                                type: 'variablepie'
+                                type: 'variablepie',
+                                 marginLeft: 400
                             },
+                            credits: {
+                                        enabled: false
+                                       },
                             title: {
                                 text: 'Size in (acres) and the year established',
-                                 style: {
+                                style: {
                                             fontSize: '15px',
                                             fontFamily: 'Verdana, sans-serif',
                                             fontWeight: 'bold'
-                                         }
+                                        }
                             },
                             tooltip: {
                                 headerFormat: '',
-                                pointFormat: '<span style="color:{point.color}">\u25CF</span> <b> {point.name}</b><br/>' +
-                                    'Size (Acres): <b>{point.y}</b><br/>' +
-                                    'Established in <b>{point.z:0f}</b><br/>'
+                              
+                                 formatter: function() {
+                                           return '<b>' + this.point.name +  
+                '                          <b>'+ '<br />'+'Size (Acres): '+
+                                           Highcharts.numberFormat(this.y, 0, '.', ',')
+                                           +'<br/> '+'Percentage:'+
+                                           "<b>" +Highcharts.numberFormat(this.percentage, 2)+'%'
+                                             +'</b><br />Establshed in:' + this.point.z;
+                                  },
                             },
+                                               
+                                legend: {
+                                layout: 'vertical',                              
+                                floating: true,
+                                align: 'left',
+                               itemMarginBottom: 10,
+                                verticalAlign: 'top',
+                                y:70,
+                                // x:90,
+                                symbolRadius: 0,
+                                 labelFormatter: function() {
+                                                return this.name + 
+                                                " (" + Highcharts.numberFormat(this.percentage, 2) + "%)";
+                                }                               
+                            },
+                            plotOptions: {
+                                 
+                                     center: [5000, 100],
+                                    series: {
+                                        allowPointSelect: true,
+                                        slicedOffset: 50
+                                    },
+                                   
+                               
+                            },
+                         
                             series: [{
                                 minPointSize: 10,
-                                innerSize: '30%',
-                                zMin: 0,
-                                name: 'countries',
-                                data:json
+                                innerSize: '40%',
+                                 zMin: 5,
+                                 zMax: 10,
+                                name: 'conservancies',
+                                data:json,
+                                showInLegend: true,
+                                animation:{
+                                         duration:1000
+                                        }
 
                             }]
                       });
@@ -247,9 +293,6 @@
                 });  
                             });
         });  
-
-        
-
 
        //employment
 
@@ -472,7 +515,8 @@
        
         //camps active
         $(document).ready(function() {
-                $.getJSON('http://localhost/mara/welcome/get_camps', function (population) {
+            
+            $.getJSON('http://localhost/mara/welcome/get_camps', function (population) {
                   Highcharts.chart('camps', {
 
                 title: {
@@ -498,6 +542,9 @@
                                         //     '#F4E001','#F0805A',
                                         //     '#26C0C0'
                                         // ],
+                 credits: {
+                                        enabled: false
+                                       },
                 xAxis: {
                     categories: population[0]['data']
                 },
@@ -562,6 +609,146 @@
                  });
 
          });
+          //beds
+        $(document).ready(function() {
+            
+            $.getJSON('http://localhost/mara/welcome/get_beds', function (json) {
+                 Highcharts.chart('beds', {
+
+                    chart: {
+                        type: 'column'
+                    },
+                    plotOptions: {
+                                column: {
+                                    colorByPoint: true
+                                }
+                            },
+                            colors: [
+                                '#C1232B','#B5C334',
+                                '#FCCE10','#E87C25',
+                                '#27727B','#FE8463',
+                                '#9BCA63','#FAD860',
+                                '#F3A43B','#60C0DD',
+                                '#D7504B','#C6E579',
+                                '#F4E001','#F0805A',
+                                '#26C0C0'
+                            ],
+                    title: {
+                        text: 'Total Beds in camps in each conservancy',
+                        style: {
+                                fontSize: '15px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+
+                    },
+                    credits: {
+                                        enabled: false
+                                       },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Total Beds'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: 'Total Beds: <b>{point.y:,.0f} </b>'
+                    },
+                    series: [{
+                        name: 'Beds',
+                        data:json
+                       
+                    }]
+                });  
+                 });
+
+         });
+          //rangers
+        $(document).ready(function() {
+            
+            $.getJSON('http://localhost/mara/welcome/get_rangers', function (json) {
+                 Highcharts.chart('rangers', {
+
+                    chart: {
+                        type: 'column'
+                    },
+                    plotOptions: {
+                                column: {
+                                    colorByPoint: true
+                                }
+                            },
+                            colors: [
+                                '#C1232B','#B5C334',
+                                '#FCCE10','#E87C25',
+                                '#27727B','#FE8463',
+                                '#9BCA63','#FAD860',
+                                '#F3A43B','#60C0DD',
+                                '#D7504B','#C6E579',
+                                '#F4E001','#F0805A',
+                                '#26C0C0'
+                            ],
+                    title: {
+                        text: 'Total Rangers in each conservancy',
+                        style: {
+                                fontSize: '15px',
+                                fontFamily: 'Verdana, sans-serif',
+                                fontWeight: 'bold'
+                            }
+
+                    },
+                    credits: {
+                                        enabled: false
+                                       },
+                    subtitle: {
+                        text: ''
+                    },
+                    xAxis: {
+                        type: 'category',
+                        labels: {
+                            rotation: -45,
+                            style: {
+                                fontSize: '13px',
+                                fontFamily: 'Verdana, sans-serif'
+                            }
+                        }
+                    },
+                    yAxis: {
+                        min: 0,
+                        title: {
+                            text: 'Total Rangers'
+                        }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    tooltip: {
+                        pointFormat: 'Total Rangers: <b>{point.y:,.0f} </b>'
+                    },
+                    series: [{
+                        name: 'Rangers',
+                        data:json
+                       
+                    }]
+                });  
+                 });
+
+         });
         //loc
         $(document).ready(function() {
                 $.getJSON('http://localhost/mara/welcome/loc', function (population) {
@@ -575,7 +762,9 @@
                                 fontWeight: 'bold'
                             }
                 },
-               
+                 credits: {
+                                        enabled: false
+                                       },
                 xAxis: {
                     categories: population[0]['data']
                 },
@@ -856,7 +1045,7 @@
 			<!-- <li class="active">
                <a  href="#1b" data-toggle="tab">CONSERVANCIES</a>
 			</li> -->
-            <li class="active">
+            <li class="dropdown active">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                       CONSERVANCIES  <span class="fa fa-chevron-down"></span></a>
                     <ul class="dropdown-menu" id="collapsed">
@@ -871,8 +1060,18 @@
 			</li>
             <li><a href="#3c" data-toggle="tab">LOC</a>
             </li>
-			<li><a href="#4b" data-toggle="tab">CAMPS</a>
-			</li>
+            <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                      CAMPS  <span class="fa fa-chevron-down"></span></a>
+                    <ul class="dropdown-menu" id="collapsed">
+                        <li><a href="#4b" data-toggle="tab">TOTAL CAMPS AND SUPPORTING CAMPS</a></li>
+                        <li><a href="#4a" data-toggle="tab">TOTAL BEDS</a></li>
+                        <li><a href="#4c" data-toggle="tab">TOTAL RANGERS</a></li>
+                       
+                    </ul>
+            </li>
+			<!-- <li><a href="#4b" data-toggle="tab">CAMPS</a>
+			</li> -->
   		    <li><a href="#5b" data-toggle="tab">EMPLOYMENT</a>
 			</li>
 			<li><a href="#6b" data-toggle="tab">BUDGET</a>
@@ -907,7 +1106,7 @@
 			            
 			        </div>
 			  </div>
-              <div class="tab-pane active" id="1a">
+              <div class="tab-pane " id="1a">
                     
                     
                     <div class="container">
@@ -1005,6 +1204,38 @@
 			            
 			        </div>     
 			  </div>
+              <div class="tab-pane" id="4a">
+                 
+                    <div class="container">
+
+                         <div class="row">
+                              
+                              <div class="col-lg-12">
+                                  <div id="beds" name="beds"></div>
+
+                              </div>
+                            
+                             
+                         </div>
+                        
+                    </div>     
+              </div>
+              <div class="tab-pane" id="4c">
+                 
+                    <div class="container">
+
+                         <div class="row">
+                              
+                              <div class="col-lg-12">
+                                  <div id="rangers" name="rangers"></div>
+
+                              </div>
+                            
+                             
+                         </div>
+                        
+                    </div>     
+              </div>
 			  <div class="tab-pane" id="5b">
                      
 			        <div class="container">

@@ -1170,7 +1170,7 @@ class Welcome extends CI_Controller {
 	public function clean(){
 			$data = $this->mara->conserve();
            
-           // var_dump($data);die();
+          
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1178,19 +1178,16 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
+		
 
 			echo json_encode($JsonArray);
 			
 			}
 
-			public function cleaner(){
+	public function cleaner(){
 			$data = $this->mara->conserve();
            
-           // var_dump($data);die();
+          
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1198,19 +1195,16 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(floatval($row->Year),floatval($row->value ),($row->name) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
+			
 
 			echo json_encode($JsonArray);
 			
-			}
+	}
 
-			public function reg_leases(){
+	public function reg_leases(){
 			$data = $this->mara->reg_leases();
            
-           // var_dump($data);die();
+
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1218,19 +1212,15 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
 
 			echo json_encode($JsonArray);
 			
-			}
+	}
 
-			public function Leasehold_Fees(){
+	public function Leasehold_Fees(){
 			$data = $this->mara->Leasehold_Fees();
            
-           // var_dump($data);die();
+         
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1238,34 +1228,30 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
-
+			
 			echo json_encode($JsonArray);
 			
-			}
-			public function Leasehold_Fee(){
+	}
+	public function Leasehold_Fee(){
 			$data = $this->mara->Leasehold_Fee();
 
 			$json_Array    = array();
 
 			foreach ($data as $row){
 			
-			    $JsonArray[] = array(($row->name),floatval($row->y ),floatval($row->z) );
+			    $JsonArray[] = array(($row->name),floatval($row->y),floatval($row->z) );
 			}
            
            
 
 			echo json_encode( $data,JSON_NUMERIC_CHECK);
 			
-			}
+	}
 
-			public function Lease_Acre(){
+	public function Lease_Acre(){
 			$data = $this->mara->Lease_Acre();
            
-           // var_dump($data);die();
+          
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1273,18 +1259,15 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
+			
 
 			echo json_encode($JsonArray);
 			
-			}
-			public function women_land_owners(){
+	}
+    public function women_land_owners(){
 			$data = $this->mara->Women_Land_Owners();
            
-           // var_dump($data);die();
+          
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1292,18 +1275,14 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
-
+			
 			echo json_encode($JsonArray);
 			
-			}
-			public function land_owners(){
+	}
+	public function land_owners(){
 			$data = $this->mara->land_owners();
            
-           // var_dump($data);die();
+          
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1311,19 +1290,15 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
-
+			
 			echo json_encode($JsonArray);
 			
-			}
+	}
 
-			public function employment(){
+	public function employment(){
 			$data = $this->mara->employment();
            
-           // var_dump($data);die();
+           
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1331,19 +1306,14 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
-
 			echo json_encode($JsonArray);
 			
-			}
+	}
 
-			public function budgets(){
+	public function budgets(){
 			$data = $this->mara->budget();
            
-           // var_dump($data);die();
+         
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1351,19 +1321,13 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
-
 			echo json_encode($JsonArray);
 			
-			}
+	}
 
-			public function bursaries(){
+	public function bursaries(){
 			$data = $this->mara->bursaries();
            
-           // var_dump($data);die();
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1371,19 +1335,15 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
-
+			
 			echo json_encode($JsonArray);
 			
-			}
+	}
 
-			public function get_cumulative(){
+	public function get_cumulative(){
 			$data = $this->mara->get_cumulative();
            
-           // var_dump($data);die();
+          
 			$json_Array    = array();
 
 			foreach ($data as $row){
@@ -1391,14 +1351,48 @@ class Welcome extends CI_Controller {
 			    $JsonArray[] = array(($row->year),floatval($row->conservancies ) );
 			}
 
-			// $labeledArray = array( 
-			    
-			//     "data" => $JsonArray
-			// );
+			echo json_encode($JsonArray);
+			
+	}
+
+	public function get_beds(){
+			$data = $this->mara->get_beds();
+           
+          
+			$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    $JsonArray[] = array(($row->name),floatval($row->value ) );
+			}
 
 			echo json_encode($JsonArray);
 			
+	}
+
+    public function get_rangers(){
+			$data = $this->mara->get_rangers();
+           
+          
+			$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    $JsonArray[] = array(($row->name),floatval($row->value ) );
 			}
+
+			echo json_encode($JsonArray);
+			
+	}
+
+	public function get_totals(){
+		$data = $this->mara->get_totals();
+           
+			
+
+			echo json_encode($data,JSON_NUMERIC_CHECK) ;
+
+	}
 
 
 

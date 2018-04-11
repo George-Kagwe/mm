@@ -16,7 +16,7 @@ public function index()
 		  $data['siana']=$this->book_model->get_all_books();
 		  $this->load->view('includes/header_view');
 	      $this->load->view('includes/nav_view');
-		  $this->load->view('leases/lease',$data);
+		  $this->load->view('leases/siana',$data);
 	}
 
 	public function book_add()

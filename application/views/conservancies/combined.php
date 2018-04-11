@@ -6,6 +6,7 @@
         
         <script type="text/javascript">
 $(document).ready(function() {
+   
     $.getJSON('http://localhost/mara/welcome/conservancies', function (population) {
       Highcharts.chart('conservancy', {
 
@@ -42,8 +43,23 @@ $(document).ready(function() {
     },
     series: [{
         type: 'column',
-        name: 'Total Camps',
-        data:  population[14]['data']
+        name: 'Jane',
+        data: population[8]['data']
+    }, {
+        type: 'column',
+        name: 'John',
+        data: population[9]['data']
+    
+    }, {
+        type: 'pie',
+        name: 'Total consumption',
+        data:population[10],
+        center: [100, 80],
+        size: 100,
+        showInLegend: false,
+        dataLabels: {
+            enabled: false
+        }
     }]
 
    

@@ -36,7 +36,7 @@ public function treemap(){
 public function dashboard(){
 	 $this->load->view('includes/header_view');
 	$this->load->view('includes/nav_view');
-	$this->load->view('conservancies/dashboard');
+	$this->load->view('conservancies/conservancy_dashboard');
 	 $this->load->view('includes/footer_view');
 
 }

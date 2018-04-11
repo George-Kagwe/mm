@@ -21,11 +21,11 @@
       <ul class="nav navbar-nav navbar-right">
         <li ><a href="<?=site_url('home/home')?>">HOME </a></li>
          <li ><a   href="<?=site_url('conservancies/')?>">Conservancies</a></li>
-       
+      
           <li><a  href="<?=site_url('population/')?>">POPULATION</a></li>
         
-        <li><a href="<?=site_url('leases/')?>">LEASES</a></li>
-        <li><a style="  background-color: #d5ca85; color:#000;" href="<?=site_url('social/')?>">social media</a></li>
+        <li><a style="  background-color: #d5ca85; color:#000;"href="<?=site_url('leases/')?>">LEASES</a></li>
+        <li><a  href="<?=site_url('social/')?>">social media</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

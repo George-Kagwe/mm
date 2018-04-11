@@ -1,11 +1,27 @@
+<div class="container"> 
+        <ul id="conservancies_tab"  class="nav nav-tabs">
+            <li class="active">
+               <a  href="#1a" data-toggle="tab">SIANA</a>
+            </li>
+         
+             
+           
+            
+        </ul>
 
+        <div class="tab-content clearfix">
+              <div class="tab-pane active" id="1a">
+                    
+                    
+                    <div class="container" style="background:#ffffff">
 
-  <div class="container" style="background:#ffffff">
-    <h1></h1>
+                         <div class="row">
+                          <div class="col-lg-12">
+                               <h1></h1>
              </center>
-    <h3>SIANA LAND PARCELS</h3>
+    <h5><center>SIANA LAND PARCELS</center></h5>
     <br />
-    <button class="btn btn-danger" onclick="add_book()"><i class="glyphicon glyphicon-plus"></i> Add Conservancy</button>
+    <button class="btn btn-danger" onclick="add_book()"><i class="glyphicon glyphicon-plus"></i> Add Lease Details</button>
     <br />
     <br />
     <table id="table_id" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -50,10 +66,20 @@
         </tr>
       </tfoot>
     </table>
+     
+                          </div>
+                              
 
-  </div>
+                            
+                             
+                         </div>
+                        
+                    </div>
+              </div>
 
- <script
+        </div>
+</div>
+<script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
@@ -62,7 +88,8 @@
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 
-  <script type="text/javascript">
+<!-- Sian starts here -->
+<script type="text/javascript">
           $(document).ready( function () {
               $('#table_id').DataTable();
           } );
@@ -101,7 +128,7 @@
 
 
                   $('#modal_form').modal('show'); // show bootstrap modal when complete loaded
-                  $('.modal-title').text('Edit Conservancy'); // Set title to Bootstrap modal title
+                  $('.modal-title').text('Edit land details'); // Set title to Bootstrap modal title
 
               },
               error: function (jqXHR, textStatus, errorThrown)
@@ -176,7 +203,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h3 class="modal-title">Add Conservancy</h3>
+        <h3 class="modal-title">Add new land details</h3>
       </div>
       <div class="modal-body form">
         <form action="#" id="form" class="form-horizontal">
@@ -228,4 +255,4 @@
     </div><!-- /.modal -->
   <!-- End Bootstrap modal -->
 
-  
+<!-- Siana ends here -->
