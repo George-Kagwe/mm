@@ -167,7 +167,7 @@
     </head>
     <body>
 
-     <div class="container">
+     <div class="container-fluid">
              <div class="row">
                   
                   <div class="col-lg-12">
@@ -213,7 +213,7 @@ print_r($res_arr);
             
         </div>
 
-        <div class="container">
+        <div class="container-fluid">
 
              <div class="row">
                   

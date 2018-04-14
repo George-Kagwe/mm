@@ -43,7 +43,7 @@
                                 layout: 'vertical',                              
                                 floating: true,
                                 align: 'left',
-                               itemMarginBottom: 10,
+                                itemMarginBottom: 5,
                                 verticalAlign: 'top',
                                 y:70,
                                 // x:90,
@@ -1040,7 +1040,7 @@
    
 
 
-<div class="container">	
+<div class="container-fluid">	
         <ul id="conservancies_tab"  class="nav nav-tabs ">
 			<!-- <li class="active">
                <a  href="#1b" data-toggle="tab">CONSERVANCIES</a>
@@ -1084,7 +1084,7 @@
 			  <div class="tab-pane active" id="1b">
                     
 			        
-			        <div class="container">
+			        <div class="container-fluid">
 
 			             <div class="row">
                           <div class="col-lg-12">
@@ -1109,7 +1109,7 @@
               <div class="tab-pane " id="1a">
                     
                     
-                    <div class="container">
+                    <div class="container-fluid">
 
                          <div class="row">
                           <div class="col-lg-12">
@@ -1128,7 +1128,7 @@
 			   <div class="tab-pane " id="2b">
                     
 			      
-			        <div class="container">
+			        <div class="container-fluid">
 
 			             <div class="row">
 			                  
@@ -1148,7 +1148,7 @@
 			   <div class="tab-pane " id="3b">
                     
 			      
-			        <div class="container">
+			        <div class="container-fluid">
 
 			             <div class="row">
 			                  
@@ -1173,7 +1173,7 @@
               <div class="tab-pane " id="3c">
                     
                   
-                    <div class="container">
+                    <div class="container-fluid">
 
                          <div class="row">
                               
@@ -1190,7 +1190,7 @@
               </div>
 			  <div class="tab-pane" id="4b">
                  
-			        <div class="container">
+			        <div class="container-fluid">
 
 			             <div class="row">
 			                  
@@ -1206,7 +1206,7 @@
 			  </div>
               <div class="tab-pane" id="4a">
                  
-                    <div class="container">
+                    <div class="container-fluid">
 
                          <div class="row">
                               
@@ -1222,7 +1222,7 @@
               </div>
               <div class="tab-pane" id="4c">
                  
-                    <div class="container">
+                    <div class="container-fluid">
 
                          <div class="row">
                               
@@ -1238,7 +1238,7 @@
               </div>
 			  <div class="tab-pane" id="5b">
                      
-			        <div class="container">
+			        <div class="container-fluid">
 
 			             <div class="row">
 			                  
@@ -1254,7 +1254,7 @@
 			  </div>
 			  <div class="tab-pane" id="6b">
                       
-			        <div class="container">
+			        <div class="container-fluid">
 
 			             <div class="row">
 			                  
@@ -1270,7 +1270,7 @@
 			  </div>
                <div class="tab-pane" id="7b">
                       
-                    <div class="container">
+                    <div class="container-fluid">
 
                          <div class="row">
                               

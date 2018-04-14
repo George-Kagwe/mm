@@ -70,14 +70,22 @@ class Mara extends CI_Model {
 	// $this->db->where('locations','mara');
 	$query = $this->db->get();
 	return $query->result();
+    $result = $this->db->query($get);
+    return $result->result();
+	}
 
-	// $get="      SELECT 
- //                  distinct(locations) id,Male,Female,Total,households,Area_in_Sq_km,Density
+	function get_population_totals()
+	{
+	$get="      SELECT  
+	           sum(Male) as Male,
+	           sum(Female) as Female,
+	           sum(Total) as Total,
+	           sum(Households) as Households,
+	           count(locations) as locations
 
- //            FROM 
- //    populations   limit 10  ";
 
-
+            FROM 
+    populations   ";
     $result = $this->db->query($get);
     return $result->result();
 	}

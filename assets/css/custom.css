@@ -1,7 +1,7 @@
     body{
  
 
-    background:#d5ca85;
+    background:#EEEEEE;
     font-family: "Helvetica Neue",Roboto,Arial,"Droid Sans",sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -12,6 +12,10 @@
 /* end of navbar brand */
 
 @media (min-width: 768px) {
+  body{
+   margin-left: 5%;
+   margin-right: 5%;
+  }
  #logo{
   margin-top:-1%;
   height: 50px !important;
@@ -177,4 +181,14 @@ border-color:#d5ca85;
 
 #conservancies_tab ul.dropdown-menu>li.active>a{
     background: #d5ca85 !important;
+}
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    color: #555;
+    cursor: default;
+    background-color: #d5ca85;
+    border: 1px solid #ddd;
+        border-bottom-color: rgb(221, 221, 221);
+    border-bottom-color: transparent;
 }

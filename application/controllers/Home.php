@@ -13,22 +13,30 @@ class Home extends CI_Controller {
 	}
 
 
-public function old(){
+public function index(){
+	$get_totals['summary'] = $this->mara->get_totals();
+	$population['population'] = $this->mara->get_population_totals();
+	$data =array_merge($get_totals,$population);
+
 	$this->load->view('includes/header_view');
 	$this->load->view('includes/nav_view');
-	// $this->load->view('includes/header_view');
+   $this->load->view('home/home',$data);
 	$this->load->view('includes/footer_view');
 
 }
 public function home(){
+	$get_totals['summary'] = $this->mara->get_totals();
+	$population['population'] = $this->mara->get_population_totals();
+	$data =array_merge($get_totals,$population);
+	
 	$this->load->view('includes/header_view');
-	$this->load->view('includes/home_nav');
-	// $this->load->view('includes/header_view');
+	$this->load->view('includes/nav_view');
+   $this->load->view('home/home',$data);
 	$this->load->view('includes/footer_view');
 
 }
 
-public function index(){
+public function dahsboard_design(){
 	$this->load->view('dashboard/includes/header_view');
 	$this->load->view('dashboard/includes/side_bar');
    $this->load->view('dashboard/includes/top_nav');

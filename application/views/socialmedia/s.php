@@ -586,7 +586,7 @@
         <script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="http://code.highcharts.com/modules/exporting.js"></script>
 
-<div class="container">
+<div class="container-fluid">
 	
 
 			        
@@ -619,7 +619,7 @@
              <br>
 			<div class="tab-content">
 			    <div class="tab-pane active" id="facebooks">
-			         <div class="container">
+			         <div class="container-fluid">
 
                          <div class="row">
                           <div class="col-lg-12">
@@ -636,7 +636,7 @@
 			    </div>
 
 			    <div class="tab-pane" id="2a">
-			         <div class="container">
+			         <div class="container-fluid">
 
                          <div class="row">
                               
@@ -651,7 +651,7 @@
                     </div>
 			    </div>
 			    <div class="tab-pane" id="2b">
-			           <div class="container">
+			           <div class="container-fluid">
 
                          <div class="row">
                               
@@ -666,7 +666,7 @@
                     </div>
 			    </div>
 			     <div class="tab-pane" id="3a">
-			         <div class="container">
+			         <div class="container-fluid">
 
                          <div class="row">
                               
@@ -681,7 +681,7 @@
                     </div>
 			    </div>
 			    <div class="tab-pane" id="3b">
-			           <div class="container">
+			           <div class="container-fluid">
 
                          <div class="row">
                               
@@ -696,7 +696,7 @@
                     </div>
 			    </div>
 			     <div class="tab-pane" id="4a">
-			         <div class="container">
+			         <div class="container-fluid">
 
                          <div class="row">
                               
@@ -711,7 +711,7 @@
                     </div>
 			    </div>
 			    <div class="tab-pane" id="4b">
-			           <div class="container">
+			           <div class="container-fluid">
 
                          <div class="row">
                               
@@ -726,7 +726,7 @@
                     </div>
 			    </div>
 			    <div class="tab-pane" id="4c">
-			           <div class="container">
+			           <div class="container-fluid">
 
                          <div class="row">
                               
