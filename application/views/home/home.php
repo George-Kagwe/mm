@@ -1,11 +1,11 @@
 <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
 
 <div class="container-fluid" >
-	<header><center>CONSERVANCY SUMMARY</center></header>
+	<header><center>CONSERVANCIES SUMMARY</center></header>
 	<br>
 	 <div class="row">
 	 	 <?php foreach($summary as $all_conservancies){?>
-	 	  <div class="col-lg-2">
+	 	  <div class="col-lg-2 col-xs-5 col-sm-4">
 	 	  	   <div class="panel panel-default" id="first">
 	 	  	   	 <div class="panel-heading">Total conservancies</div>
 			         <div class="panel-body"> 
@@ -18,7 +18,7 @@
 	 	  </div>
 	 	   <?php }?>
 	 	   <?php foreach($summary as $total_acres){?>
-	 	  <div class="col-lg-2">
+	 	  <div class="col-lg-2 col-xs-5 col-sm-4">
 	 	  	
 	 	  	  <div class="panel panel-default">
 	 	  	   	 <div class="panel-heading">Total land size(Acres)</div>
@@ -31,7 +31,7 @@
 	 	  </div>
 	 	   <?php }?>
 	 	   <?php foreach($summary as $Land_Owners){?>
-	 	  <div class="col-lg-2">
+	 	  <div class="col-lg-2 col-xs-5  col-sm-4">
 	 	  	   
 	 	  	 
 	 	  	    <div class="panel panel-default">
@@ -46,7 +46,7 @@
                </div>
 	 	  </div>
 	 	  
-	 	  <div class="col-lg-2">
+	 	  <div class="col-lg-2 col-xs-5 col-sm-4">
 	 	  	   
 	 	  	 
 	 	  	    <div class="panel panel-default">
@@ -60,7 +60,7 @@
                  <div class="panel-footer"></div>
                </div>
 	 	  </div>
-	 	   <div class="col-lg-2">
+	 	   <div class="col-lg-2 col-xs-5 col-sm-4">
 	 	  	   
 	 	  	 
 	 	  	    <div class="panel panel-default">
@@ -74,7 +74,7 @@
                  <div class="panel-footer"></div>
                </div>
 	 	  </div>
-	 	   <div class="col-lg-2">
+	 	   <div class="col-lg-2 col-xs-5 col-sm-4">
 	 	  	   
 	 	  	 
 	 	  	    <div class="panel panel-default">
@@ -112,7 +112,9 @@
 	.panel-default{
 		width:170px;
 		height: 170px;
-		border-radius: 50%;
+		/*border-radius: 50%;*/
+		background:#d5ca85;
+		border: none;
 
 	}
 	.panel-heading, .panel-footer{

@@ -1026,6 +1026,7 @@
           
         <script src="http://code.highcharts.com/highcharts.js"></script>
         <script src="http://code.highcharts.com/modules/exporting.js"></script>
+       <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/variable-pie.js"></script>
         <script src="https://code.highcharts.com/modules/heatmap.js"></script>
         <script src="https://code.highcharts.com/modules/treemap.js"></script>
@@ -1072,7 +1073,7 @@
             </li>
 			<!-- <li><a href="#4b" data-toggle="tab">CAMPS</a>
 			</li> -->
-  		    <li><a href="#5b" data-toggle="tab">EMPLOYMENT</a>
+  		    <li><a href="#5b" data-toggle="tab">DIRECT EMPLOYMENT</a>
 			</li>
 			<li><a href="#6b" data-toggle="tab">BUDGET</a>
 			</li>

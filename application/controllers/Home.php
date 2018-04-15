@@ -19,7 +19,7 @@ public function index(){
 	$data =array_merge($get_totals,$population);
 
 	$this->load->view('includes/header_view');
-	$this->load->view('includes/nav_view');
+	$this->load->view('includes/home_nav');
    $this->load->view('home/home',$data);
 	$this->load->view('includes/footer_view');
 
@@ -30,7 +30,7 @@ public function home(){
 	$data =array_merge($get_totals,$population);
 	
 	$this->load->view('includes/header_view');
-	$this->load->view('includes/nav_view');
+	$this->load->view('includes/home_nav');
    $this->load->view('home/home',$data);
 	$this->load->view('includes/footer_view');
 

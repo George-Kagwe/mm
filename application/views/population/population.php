@@ -174,24 +174,26 @@
                       <div class="form-group well">
                      <!--  <form action="<?=site_url('population/filter')?>" method="post" class="form-inline"> -->
                    <form class="form-inline">
-                                            <label>Select a Conservancy</label><br>
+                                            <label>Select a location</label><br>
 
                                           <div class="form-group">
                                               <select  class="form-control" multiple="multiple" id="location"   name="location[] required="true"  >
-                                          <!--    <option value="2" selected="selected">Option 2</option> -->
+                                        
 
                                             
                                           <option value='<?php 
 
-foreach($all as $alls)
-{
-    $new_arr[] = $alls->id;
-}
-$res_arr = implode(",",$new_arr);
-print_r($res_arr);
+                                            foreach($all as $alls)
+                                            {
+                                                $new_arr[] = $alls->id;
+                                            }
+                                            $res_arr = implode(",",$new_arr);
+                                            print_r($res_arr);
 
 
- ?> 'selected="selected"  >All Selected</option>
+                                             ?> 'selected="selected"  >All Selected
+
+                                          </option>
 
                                                 <?php
                                               
@@ -201,6 +203,9 @@ print_r($res_arr);
                                              <?php }?> 
                                               </select>
                                               </div>
+                                              
+
+
                                               <button type="button"  id="filter" class="btn btn-danger">Filter</button>
                      </form>
                             </div> 
