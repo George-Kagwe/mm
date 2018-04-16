@@ -15,7 +15,7 @@ class Home extends CI_Controller {
 
 public function index(){
 	$get_totals['summary'] = $this->mara->get_totals();
-	$population['population'] = $this->mara->get_population_totals();
+	$population['population'] = $this->mara->population_totals();
 	$data =array_merge($get_totals,$population);
 
 	$this->load->view('includes/header_view');
@@ -26,7 +26,7 @@ public function index(){
 }
 public function home(){
 	$get_totals['summary'] = $this->mara->get_totals();
-	$population['population'] = $this->mara->get_population_totals();
+	$population['population'] = $this->mara->population_totals();
 	$data =array_merge($get_totals,$population);
 	
 	$this->load->view('includes/header_view');

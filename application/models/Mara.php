@@ -320,7 +320,21 @@ public function get_rangers(){
  }
 
 	
+public function population_totals(){
+	$get ="SELECT
+      count(*) as total_villages,
+      sum(male) as male_population,
+      sum(Female) as female_population,
+      sum(Households) as Households,
+      sum(Area_in_Sq_km) as total_area,
+      sum(Density) as Density,
+       sum(total) as total
+      from populations";
 
+       $result = $this->db->query($get);
+    return $result->result();
+	
+}
 
 
 

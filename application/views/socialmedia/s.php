@@ -208,7 +208,7 @@
                     marginBottom: 100
                 },
                 title: {
-                    text: 'Twitter folowers',
+                    text: 'Twitter followers',
                     x: -20 //center
                 }, 
                 credits: {

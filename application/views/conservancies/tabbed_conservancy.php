@@ -516,7 +516,7 @@
         //camps active
         $(document).ready(function() {
             
-            $.getJSON('http://localhost/mara/welcome/get_camps', function (population) {
+            $.getJSON("<?php echo site_url('welcome/get_camps');?>", function (population) {
                   Highcharts.chart('camps', {
 
                 title: {
@@ -612,7 +612,7 @@
           //beds
         $(document).ready(function() {
             
-            $.getJSON('http://localhost/mara/welcome/get_beds', function (json) {
+            $.getJSON("<?php echo site_url('welcome/get_beds');?>", function (json) {
                  Highcharts.chart('beds', {
 
                     chart: {
@@ -682,7 +682,7 @@
           //rangers
         $(document).ready(function() {
             
-            $.getJSON('http://localhost/mara/welcome/get_rangers', function (json) {
+            $.getJSON("<?php echo site_url('/welcome/get_rangers');?>", function (json) {
                  Highcharts.chart('rangers', {
 
                     chart: {
@@ -751,7 +751,7 @@
          });
         //loc
         $(document).ready(function() {
-                $.getJSON('http://localhost/mara/welcome/loc', function (population) {
+                $.getJSON("<?php echo site_url('/welcome/loc');?>", function (population) {
                   Highcharts.chart('loc', {
 
                 title: {

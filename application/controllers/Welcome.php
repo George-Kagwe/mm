@@ -1393,6 +1393,16 @@ class Welcome extends CI_Controller {
 			echo json_encode($data,JSON_NUMERIC_CHECK) ;
 
 	}
+    
+    public function get_population_totals(){
+		$data = $this->mara->population_totals();
+           
+			
+
+			echo json_encode($data,JSON_NUMERIC_CHECK) ;
+
+	}
+
 
 
 

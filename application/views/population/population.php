@@ -16,7 +16,7 @@
                     marginBottom: 150
                 },
                 title: {
-                    text: 'MALE AND FEMALE POPULATION IN VARIOUS CONSERVANCIES',
+                    text: 'Male, Female and Total Population in Narok Suswa',
                     x: -20 //center
                 }, 
                 credits: {
@@ -31,7 +31,7 @@
                 },
                 yAxis: {
                     title: {
-                        text: 'POPULATION'
+                        text: 'Population'
                     },
                     plotLines: [{
                         value: 0,
@@ -97,7 +97,7 @@
                     marginBottom: 150
                 },
                 title: {
-                    text: 'MALE AND FEMALE POPULATION IN VARIOUS CONSERVANCIES',
+                    text: 'Male, Female and Total Population in Narok Suswa',
                     x: -20 //center
                 }, 
                 credits: {
@@ -112,7 +112,7 @@
                 },
                 yAxis: {
                     title: {
-                        text: 'POPULATION'
+                        text: 'Population'
                     },
                     plotLines: [{
                         value: 0,
