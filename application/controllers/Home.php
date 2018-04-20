@@ -20,7 +20,7 @@ public function index(){
 
 	$this->load->view('includes/header_view');
 	$this->load->view('includes/home_nav');
-   $this->load->view('home/home',$data);
+   $this->load->view('home/home_view',$data);
 	$this->load->view('includes/footer_view');
 
 }
@@ -31,7 +31,7 @@ public function home(){
 	
 	$this->load->view('includes/header_view');
 	$this->load->view('includes/home_nav');
-   $this->load->view('home/home',$data);
+   $this->load->view('home/home_view',$data);
 	$this->load->view('includes/footer_view');
 
 }

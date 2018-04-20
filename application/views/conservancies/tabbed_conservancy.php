@@ -2,7 +2,9 @@
  <script type="text/javascript">
         //conservancies pie
         $(document).ready(function() {
+         
           $.getJSON("<?php echo site_url('welcome/Leasehold_Fee');?>", function(json) {  
+            console.log(json);
                               Highcharts.setOptions({
                            
                                 lang: {
