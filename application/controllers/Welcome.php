@@ -11,11 +11,7 @@ class Welcome extends CI_Controller {
 		
 	}
 
-	public function index()
-	{
-     		$this->load->view('includes/ajax');
-	}
-    
+
    
     public function facebook()
 	{
@@ -1384,6 +1380,25 @@ class Welcome extends CI_Controller {
 			echo json_encode($JsonArray);
 			
 	}
+
+	public function maps()
+	{
+     		$data = $this->mara->maps();
+            
+
+
+     		$json_Array    = array();
+
+			foreach ($data as $row){
+			
+			    // $JsonArray[] = array(($row->name),floatval($row->size ),($row->geojson) );
+			    $JsonArray[] = array(($row->geojson) );
+			}
+
+     		echo json_encode($data,JSON_NUMERIC_CHECK) ;
+
+	}
+    
 
 	public function get_totals(){
 		$data = $this->mara->get_totals();

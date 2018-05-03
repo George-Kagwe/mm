@@ -337,5 +337,16 @@ public function population_totals(){
 }
 
 
+public function maps(){
+	$get ="SELECT
+      name as name,
+      size as size,
+      geojson as geojson
+      from maps";
+
+       $result = $this->db->query($get);
+    return $result->result();
+}
+
 
 }
