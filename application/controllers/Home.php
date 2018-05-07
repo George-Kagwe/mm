@@ -18,9 +18,9 @@ public function index(){
 	$population['population'] = $this->mara->population_totals();
 	$data =array_merge($get_totals,$population);
 
-	$this->load->view('includes/header_view');
-	$this->load->view('includes/home_nav');
-   $this->load->view('home/home_view',$data);
+	// $this->load->view('includes/header_view');
+	// $this->load->view('includes/home_nav');
+   $this->load->view('home/home_with_map',$data);
 	$this->load->view('includes/footer_view');
 
 }
@@ -29,9 +29,9 @@ public function home(){
 	$population['population'] = $this->mara->population_totals();
 	$data =array_merge($get_totals,$population);
 	
-	$this->load->view('includes/header_view');
-	$this->load->view('includes/home_nav');
-   $this->load->view('home/home_view',$data);
+	// $this->load->view('includes/header_view');
+	// $this->load->view('includes/home_nav');
+   $this->load->view('home/home_with_map',$data);
 	$this->load->view('includes/footer_view');
 
 }
