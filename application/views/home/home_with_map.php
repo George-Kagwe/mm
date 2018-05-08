@@ -1,13 +1,13 @@
 <html> 
 <head> 
-<title>Test</title> 
+<title>MMWCA BI</title> 
 
 <script type="text/javascript"
 	src="http://maps.google.com/maps/api/js?key=AIzaSyDP63aXl_F57f5AsAyx7Arh_IeS9Fzz62A&sensor=false&libraries=geometry"></script>
 
   
 	<script src="https://cdn.rawgit.com/googlemaps/js-map-label/gh-pages/src/maplabel.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -135,44 +135,43 @@ function initialize() {
 
           mapLabel.set('position', myLatlng);
 	}
-//  var marker_lemek= 
-//             new google.maps.Marker({ 
-//               position: new google.maps.LatLng(-1.1516, 35.1897), 
-//               title: 'Lemek', map:map
-//              })
-// var marker = 
-//             new google.maps.Marker({ 
-//               position: new google.maps.LatLng(-1.07829, 35.86012), 
-//               title: 'Narok Town', map:map
-//              })
-
-
-
-                 // naboisho conservancy
 
           var contentString_naboisho =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
+                    '<div class="container-fluid naboisho"  style="width:600px;margin:0 0 20px 20px;height:90px;"">' +
+
+                    '<h3> <center>Naboisho Conservancy</center></h3>' +
+                    '<div class="row">' +              
+                     
+                    '<div class="col-sm-4 col-lg-4 col-md-4 col-xs-12">' +
+                    '<img height="200" src="<?php echo base_url().'assets/images/lion.jpg';?>">'+
                     '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">Naboisho Conservancy</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p><i class="fa fa-clock-o "></i> Established in 2010</p>' +
-                    '<p><i class="fa fa-circle "></i> Size is 52,956 acres</p>' +
-                    '<p><i class="fa fa-spinner "></i> 7 camps</p>' +
-                    '<p><i class="fa fa-bed " aria-hidden="true"> </i> 144 beds</p>' +
-                    '<p> </p>' +
+                   
+                    '<div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">' +
+
+                    '<p><i class="fa fa-clock-o  fa-lg"></i>  Established in 2010</p>' +
+                    '<p><i class="fa fa-circle  fa-lg"></i>   Size is 52,956 acres</p>' +
+                    '<p><i class="fa fa-users  fa-lg"></i>  596 land owners</p>' +
+                    '<p><i class="fa fa-spinner  fa-lg"></i>  7 camps</p>' +
+                    '<p><i class="fa fa-bed  fa-lg"> </i>     144 beds</p>' +
+                    '<p><i class="fa fa-user  fa-lg"> </i>     200 jobs in hotels and conservancy management</p>' +
+                     '<p><i class="fa fa-male   fa-lg"> </i>     35 Rangers and scouts</p>' +
+                   
+                    
+                    '</div>' +
+
                     '</div>' +
                     '</div>'
               ;
 
                var infowindow_naboisho = new google.maps.InfoWindow({
-                content: contentString_naboisho
+                content: contentString_naboisho,
+
               });
 
                  var marker_naboisho= 
               new google.maps.Marker({ 
                 position: new google.maps.LatLng(-1.4034, 35.3190), 
-                title: 'Naboisho', map:map
+                title: 'Naboisho  conservancy', map:map
                });
                     //naboisho
                     var positions= {lat: -1.4034, lng:  35.3190};
@@ -191,16 +190,28 @@ function initialize() {
                  // mara  conservancy
 
           var contentString_mara =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
+                     '<div class="container-fluid mara"  style="width:600px;margin:0 0 20px 20px;height:90px;"">' +
+
+                    '<h3> <center>Mara North Conservancy</center></h3>' +
+                    '<div class="row">' +              
+                     
+                    '<div class="col-sm-4 col-lg-4 col-md-4 col-xs-12">' +
+                    '<img height="200" src="<?php echo base_url().'assets/images/lion.jpg';?>">'+
                     '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">Mara Conservancy</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p><i class="fa fa-clock-o "></i> Established in 2010</p>' +
-                    '<p><i class="fa fa-circle "></i> Size is 52,956 acres</p>' +
-                    '<p><i class="fa fa-spinner "></i> 7 camps</p>' +
-                    '<p><i class="fa fa-bed " aria-hidden="true"> </i> 144 beds</p>' +
-                    '<p> </p>' +
+                   
+                    '<div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">' +
+
+                    '<p><i class="fa fa-clock-o  fa-lg"></i>  Established in 2008</p>' +
+                    '<p><i class="fa fa-circle  fa-lg"></i>   Size is 69,160 acres</p>' +
+                    '<p><i class="fa fa-users  fa-lg"></i>  688 land owners</p>' +
+                    '<p><i class="fa fa-spinner  fa-lg"></i>  14 camps</p>' +
+                    '<p><i class="fa fa-bed  fa-lg"> </i>     314 beds</p>' +
+                    '<p><i class="fa fa-user  fa-lg"> </i>     250 jobs in hotels and conservancy management</p>' +
+                     '<p><i class="fa fa-male   fa-lg"> </i>     41 Rangers and scouts</p>' +
+                   
+                    
+                    '</div>' +
+
                     '</div>' +
                     '</div>'
               ;
@@ -229,16 +240,28 @@ function initialize() {
                  // kinyei  conservancy
 
           var contentString_kinyei =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
+                     '<div class="container-fluid kinyei"  style="width:600px;margin:0 0 20px 20px;height:90px;"">' +
+
+                    '<h3> <center>Ol Kinyei Conservancy</center></h3>' +
+                    '<div class="row">' +              
+                     
+                    '<div class="col-sm-4 col-lg-4 col-md-4 col-xs-12">' +
+                    '<img height="200" src="<?php echo base_url().'assets/images/lion.jpg';?>">'+
                     '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">Ol Kinyei Conservancy</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p><i class="fa fa-clock-o "></i> Established in 2010</p>' +
-                    '<p><i class="fa fa-circle "></i> Size is 52,956 acres</p>' +
-                    '<p><i class="fa fa-spinner "></i> 7 camps</p>' +
-                    '<p><i class="fa fa-bed " aria-hidden="true"> </i> 144 beds</p>' +
-                    '<p> </p>' +
+                   
+                    '<div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">' +
+
+                    '<p><i class="fa fa-clock-o  fa-lg"></i>  Established in 2005</p>' +
+                    '<p><i class="fa fa-circle  fa-lg"></i>   Size is 18,641 acres</p>' +
+                    '<p><i class="fa fa-users  fa-lg"></i>  230 land owners</p>' +
+                    '<p><i class="fa fa-spinner  fa-lg"></i>  4 camps</p>' +
+                    '<p><i class="fa fa-bed  fa-lg"> </i>     48 beds</p>' +
+                    '<p><i class="fa fa-user  fa-lg"> </i>     51 jobs in hotels and conservancy management</p>' +
+                     '<p><i class="fa fa-male   fa-lg"> </i>     20 Rangers and scouts</p>' +
+                   
+                    
+                    '</div>' +
+
                     '</div>' +
                     '</div>'
               ;
@@ -268,16 +291,28 @@ function initialize() {
                      // olare Orok  conservancy
 
           var contentString_olare =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
+                            '<div class="container-fluid olare"  style="width:600px;margin:0 0 20px 20px;height:90px;"">' +
+
+                    '<h3> <center>Olare Orok Conservancy</center></h3>' +
+                    '<div class="row">' +              
+                     
+                    '<div class="col-sm-4 col-lg-4 col-md-4 col-xs-12">' +
+                    '<img height="200" src="<?php echo base_url().'assets/images/lion.jpg';?>">'+
                     '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">Olare Orok Conservancy</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p><i class="fa fa-clock-o "></i> Established in 2010</p>' +
-                    '<p><i class="fa fa-circle "></i> Size is 52,956 acres</p>' +
-                    '<p><i class="fa fa-spinner "></i> 7 camps</p>' +
-                    '<p><i class="fa fa-bed " aria-hidden="true"> </i> 144 beds</p>' +
-                    '<p> </p>' +
+                   
+                    '<div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">' +
+
+                    '<p><i class="fa fa-clock-o  fa-lg"></i>  Established in 2006</p>' +
+                    '<p><i class="fa fa-circle  fa-lg"></i>   Size is 21,386 acres</p>' +
+                    '<p><i class="fa fa-users  fa-lg"></i>  157 land owners</p>' +
+                    '<p><i class="fa fa-spinner  fa-lg"></i>  4 camps</p>' +
+                    '<p><i class="fa fa-bed  fa-lg"> </i>     70 beds</p>' +
+                    '<p><i class="fa fa-user  fa-lg"> </i>     51 jobs in hotels and conservancy management</p>' +
+                     '<p><i class="fa fa-male   fa-lg"> </i>     24 Rangers and scouts</p>' +
+                   
+                    
+                    '</div>' +
+
                     '</div>' +
                     '</div>'
               ;
@@ -306,16 +341,28 @@ function initialize() {
                    // Lemek  conservancy
 
           var contentString_lemek =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
+                    '<div class="container-fluid lemek"  style="width:600px;margin:0 0 20px 20px;height:90px;"">' +
+
+                    '<h3> <center>Lemek Conservancy</center></h3>' +
+                    '<div class="row">' +              
+                     
+                    '<div class="col-sm-4 col-lg-4 col-md-4 col-xs-12">' +
+                    '<img height="200" src="<?php echo base_url().'assets/images/lion.jpg';?>">'+
                     '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">Lemek Conservancy</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p><i class="fa fa-clock-o "></i> Established in 2010</p>' +
-                    '<p><i class="fa fa-circle "></i> Size is 52,956 acres</p>' +
-                    '<p><i class="fa fa-spinner "></i> 7 camps</p>' +
-                    '<p><i class="fa fa-bed " aria-hidden="true"> </i> 144 beds</p>' +
-                    '<p> </p>' +
+                   
+                    '<div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">' +
+
+                    '<p><i class="fa fa-clock-o  fa-lg"></i>  Established in 2009</p>' +
+                    '<p><i class="fa fa-circle  fa-lg"></i>   Size is 6,151 acres</p>' +
+                    '<p><i class="fa fa-users  fa-lg"></i>  480 land owners</p>' +
+                    '<p><i class="fa fa-spinner  fa-lg"></i>  5 camps</p>' +
+                    '<p><i class="fa fa-bed  fa-lg"> </i>     332 beds</p>' +
+                    '<p><i class="fa fa-user  fa-lg"> </i>     120 jobs in hotels and conservancy management</p>' +
+                     '<p><i class="fa fa-male   fa-lg"> </i>     18 Rangers and scouts</p>' +
+                   
+                    
+                    '</div>' +
+
                     '</div>' +
                     '</div>'
               ;
@@ -343,16 +390,28 @@ function initialize() {
                    // Olchoro  conservancy
 
           var contentString_olchoro =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
+                    '<div class="container-fluid Olchoro"  style="width:600px;margin:0 0 20px 20px;height:90px;"">' +
+
+                    '<h3> <center>Olchoro Conservancy</center></h3>' +
+                    '<div class="row">' +              
+                     
+                    '<div class="col-sm-4 col-lg-4 col-md-4 col-xs-12">' +
+                    '<img height="200" src="<?php echo base_url().'assets/images/lion.jpg';?>">'+
                     '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">Olchoro Conservancy</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p><i class="fa fa-clock-o "></i> Established in 2010</p>' +
-                    '<p><i class="fa fa-circle "></i> Size is 52,956 acres</p>' +
-                    '<p><i class="fa fa-spinner "></i> 7 camps</p>' +
-                    '<p><i class="fa fa-bed " aria-hidden="true"> </i> 144 beds</p>' +
-                    '<p> </p>' +
+                   
+                    '<div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">' +
+
+                    '<p><i class="fa fa-clock-o  fa-lg"></i>  Established in 1992</p>' +
+                    '<p><i class="fa fa-circle  fa-lg"></i>   Size is 15,765 acres</p>' +
+                    '<p><i class="fa fa-users  fa-lg"></i>  170 land owners</p>' +
+                    '<p><i class="fa fa-spinner  fa-lg"></i>  4 camps</p>' +
+                    '<p><i class="fa fa-bed  fa-lg"> </i>     134 beds</p>' +
+                    '<p><i class="fa fa-user  fa-lg"> </i>     150 jobs in hotels and conservancy management</p>' +
+                     '<p><i class="fa fa-male   fa-lg"> </i>     15 Rangers and scouts</p>' +
+                   
+                    
+                    '</div>' +
+
                     '</div>' +
                     '</div>'
               ;
@@ -381,16 +440,28 @@ function initialize() {
                    // Enonkishu  conservancy
 
           var contentString_Enonkishu =
-                    '<div id="content">' +
-                    '<div id="siteNotice">' +
+                    '<div class="container-fluid Enonkishu"  style="width:600px;margin:0 0 20px 20px;height:90px;"">' +
+
+                    '<h3> <center>Enonkishu Conservancy</center></h3>' +
+                    '<div class="row">' +              
+                     
+                    '<div class="col-sm-4 col-lg-4 col-md-4 col-xs-12">' +
+                    '<img height="200" src="<?php echo base_url().'assets/images/lion.jpg';?>">'+
                     '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">Enokishu Conservancy</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p><i class="fa fa-clock-o "></i> Established in 2010</p>' +
-                    '<p><i class="fa fa-circle "></i> Size is 52,956 acres</p>' +
-                    '<p><i class="fa fa-spinner "></i> 7 camps</p>' +
-                    '<p><i class="fa fa-bed " aria-hidden="true"> </i> 144 beds</p>' +
-                    '<p> </p>' +
+                   
+                    '<div class="col-sm-8 col-lg-8 col-md-8 col-xs-12">' +
+
+                    '<p><i class="fa fa-clock-o  fa-lg"></i>  Established in 2011</p>' +
+                    '<p><i class="fa fa-circle  fa-lg"></i>   Size is 5,928 acres</p>' +
+                    '<p><i class="fa fa-users  fa-lg"></i>  31 land owners</p>' +
+                    '<p><i class="fa fa-spinner  fa-lg"></i>  2 camps</p>' +
+                    '<p><i class="fa fa-bed  fa-lg"> </i>     12 beds</p>' +
+                    '<p><i class="fa fa-user  fa-lg"> </i>     65 jobs in hotels and conservancy management</p>' +
+                     '<p><i class="fa fa-male   fa-lg"> </i>     13 Rangers and scouts</p>' +
+                   
+                    
+                    '</div>' +
+
                     '</div>' +
                     '</div>'
               ;
@@ -407,8 +478,8 @@ function initialize() {
                   
                 enonkishu_conservancy_region_shape.addListener('mouseover', function() {
                             // infowindow_naboisho.position(marker_naboisho);
-                             infowindow_Enonkishu.setPosition({lat: -1.0784541153990252, lng: 35.26896267211919});
-                            infowindow_Enonkishu.open(map);
+                             // infowindow_Enonkishu.setPosition({lat: -1.0784541153990252, lng: 35.26896267211919});
+                            infowindow_Enonkishu.open(map,marker_Enonkishu);
                  });
                   enonkishu_conservancy_region_shape.addListener('mouseout', function() {
                       infowindow_Enonkishu.close();
@@ -528,6 +599,96 @@ function initialize() {
     	
     </div>
 <style type="text/css">
+    .naboisho p{
+      font-weight: bold;
+    }
+
+     .naboisho .fa{
+      color:green;
+    }
+
+     .naboisho h3{
+      color:green;
+      margin-bottom: 3%;
+    }
+     .mara p{
+      font-weight: bold;
+    }
+
+     .mara .fa{
+      color:purple;
+    }
+
+     .mara h3{
+      color:purple;
+      margin-bottom: 3%;
+    }
+
+      .kinyei p{
+      font-weight: bold;
+    }
+
+     .kinyei .fa{
+      color:#795548;
+    }
+
+     .kinyei h3{
+      color:#795548;
+      margin-bottom: 3%;
+    }
+      .olare p{
+      font-weight: bold;
+    }
+
+     .olare .fa{
+      color:#4CAF50;
+    }
+
+     .olare h3{
+      color:#4CAF50;
+      margin-bottom: 3%;
+    }
+
+    .lemek p{
+      font-weight: bold;
+    }
+
+     .lemek .fa{
+      color:#29B6F6;
+    }
+
+     .lemek h3{
+      color:#29B6F6;
+      margin-bottom: 3%;
+    }
+
+      .Olchoro p{
+      font-weight: bold;
+    }
+
+     .Olchoro .fa{
+      color:#8B0000;
+    }
+
+     .Olchoro h3{
+      color:#8B0000;
+      margin-bottom: 3%;
+    }
+    .Enonkishu p{
+      font-weight: bold;
+    }
+
+     .Enonkishu .fa{
+      color:#A59AC6;
+    }
+
+     .Enonkishu h3{
+      color:#A59AC6;
+      margin-bottom: 3%;
+    }
+
+
+
     .chart {
         min-width: 320px;
         max-width: 800px;
@@ -542,16 +703,19 @@ function initialize() {
     border: 1px solid #fff;
     box-shadow: 40px;
     height: 80px;
-    border-radius: .366em;
-    }
+     border-top-left-radius:.366em;
+    border-bottom-left-radius:.366em;   
+  }
   .data_item2{
+
         margin-top: 4%;
     background: #d5ca85;
     color: #fff
     border: 1px solid #fff;
     box-shadow: 40px;
     height: 80px;
-    border-radius: .366em;
+   border-top-right-radius:.366em;
+    border-bottom-right-radius:.366em;   
     }
     .data_item3{
          margin-top: 4%;
@@ -608,18 +772,18 @@ function initialize() {
     }
     
 
-  h3 {
+ .panel-body h3 {
     text-align: center;
     padding-top: 0%;
     color: #000;
       }
-     p{
+    .panel-body  p{
       text-align: center;
     color: #000;
      }
 
    
-     p{
+    .panel-body p{
       text-align: center;
     color: #000;
      }

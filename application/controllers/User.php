@@ -6,14 +6,45 @@ public function __construct() {
  $this ->load-> model('country_model');
  
 }
- function Register() {
- $data['countries'] = $this -> country_model -> get_countries();
- $this ->load-> view('test/post_view', $data);
+
+public function get_credentials(){
+
+
+	//get the credentials 
+	$user_name=$this->input->post();
+	$email=$this->input->post();
+	$password=$this->input->post();
+	$conservancy=$this->input->post();
+	$timestamp=$this->input->post();
+	$role=$this->input->post();
+	$permissions=$this->input->post();
+
+	//check if there is a session existing already
+
+
+	//if yes, kill it and start  new one
+
+
+
+	//if no session existing save the credentials and start another one.
+
+
+
+	// start a session
+
+
  }
- 
- function get_cities($country){
- $this->load->model('city_model');
- header('Content-Type: application/x-json; charset=utf-8');
- echo(json_encode($this->city_model->get_cities($country)));
+
+public function back_to wild(){
+
+
 }
- 
+
+
+ public function log_out(){
+
+ 	//kill the ssession
+ }
+
+
+
