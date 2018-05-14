@@ -3,9 +3,47 @@ class User extends CI_Controller {
  
 public function __construct() {
  parent::__construct();
- $this ->load-> model('country_model');
+ $this ->load->library('encryption');
  
 }
+
+public function index(){
+
+	$this->load->helper('cookie');
+
+	 //  $name='George'; 
+	 //  $role='Regional Admin';
+	 //  $email='georgegkagwe@gmail.com';
+	 //  $timestamp='2:37pm';
+	 //  $conservancy='Naboisho';
+
+	 // $values =array('name' =>$name,
+	 //                'role'=>$role,
+	 //                'email'=>$email,
+	 //                'timestamp'=>$timestamp,
+	 //                  'organization'=>$conservancy
+	 //                 );
+	 // $dataset =json_encode($values);
+
+
+  //     $cookie = array(
+  //                   'name'   => 'data',
+  //                   'value'  => $this->encryption->encrypt($dataset),
+  //                   'expire' =>  86500,
+  //                   'secure' => false
+  //               );
+  //               $this->input->set_cookie($cookie);
+	            $data =array();
+
+
+                $dataaa = json_decode($_COOKIE['data'], true); 
+
+
+ // var_dump($dataaa['name']."  ".$dataaa['email']." ".$dataaa['organization']."  ".$dataaa['timestamp']."  ".$dataaa['role']); 
+
+                var_dump($dataaa['first_name']."  ".$dataaa['last_name']."  ".$dataaa['email']." ".$dataaa['organization']."  ".$dataaa['timestamp']."  ".$dataaa['role']); 
+}
+
 
 public function get_credentials(){
 
@@ -35,7 +73,7 @@ public function get_credentials(){
 
  }
 
-public function back_to wild(){
+public function back_to_wild(){
 
 
 }
@@ -48,3 +86,4 @@ public function back_to wild(){
 
 
 
+}
